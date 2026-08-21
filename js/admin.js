@@ -257,9 +257,20 @@ async function processChosenFile(file, which) {
     if (typeof window.heic2any === "function") {
       try {
         showToast("Converting HEIC photo to JPEG…");
-        outputFile = await convertHeicToJpeg(file);
-        ext = "jpg";
-        showToast("Converted to JPEG.");
+        const conv = await convertHeicToJpeg(file);
+        // heic2any may return an array of blobs for multi-image containers — pick first
+        const convBlob = Array.isArray(conv) ? conv[0] : conv;
+        if (convBlob instanceof Blob) {
+          // create a File with a .jpg filename so downloads and writes use the correct extension
+          const baseName = (file.name || "photo").replace(/\.(heic|heif)$/i, "");
+          outputFile = new File([convBlob], `${baseName}.jpg`, { type: "image/jpeg" });
+          ext = "jpg";
+          showToast("Converted to JPEG.");
+        } else {
+          // fallback to whatever was returned
+          outputFile = file;
+          showToast("Couldn't convert that HEIC photo automatically — using the original file.", true);
+        }
       } catch (e) {
         showToast("Couldn't convert that HEIC photo automatically — using the original file. " +
           "You may want to convert it yourself before publishing.", true);
@@ -327,13 +338,43 @@ async function handleSave(evt) {
     notes: els.fNotes.value.trim()
   };
 
+  // If we've converted any pending files to JPEG, make sure the entry paths use .jpg
+  function ensureExt(path, ext) {
+    if (!path) return path;
+    return path.replace(/\.[^/.]+$/, `.${ext}`);
+  }
+  if (pendingFrontFile && pendingFrontFile.type === "image/jpeg") {
+    entry.frontImage = ensureExt(entry.frontImage, "jpg");
+  }
+  if (pendingBackFile && pendingBackFile.type === "image/jpeg") {
+    entry.backImage = ensureExt(entry.backImage, "jpg");
+  }
+
   // Copy any newly picked photos into place if we have disk access.
   if (projectDirHandle && (pendingFrontFile || pendingBackFile)) {
     try {
       const imagesDir = await projectDirHandle.getDirectoryHandle("images", { create: true });
       const bookDir = await imagesDir.getDirectoryHandle(id, { create: true });
-      if (pendingFrontFile) await writeFileToDir(bookDir, filenameFromPath(entry.frontImage), pendingFrontFile);
-      if (pendingBackFile) await writeFileToDir(bookDir, filenameFromPath(entry.backImage), pendingBackFile);
+      // Determine filenames to use based on converted file types (fall back to paths in the form)
+      if (pendingFrontFile) {
+        let fname = filenameFromPath(entry.frontImage);
+        // If the pending file is JPEG but the path doesn't end with .jpg, force .jpg
+        if (pendingFrontFile.type === "image/jpeg") {
+          fname = fname.replace(/\.[^/.]+$/, ".jpg");
+          entry.frontImage = entry.frontImage.replace(/\.[^/.]+$/, ".jpg");
+        }
+        console.debug("admin: writing front file", { originalName: pendingFrontFile.name, type: pendingFrontFile.type, size: pendingFrontFile.size, chosenFilename: fname });
+        await writeFileToDir(bookDir, fname, pendingFrontFile);
+      }
+      if (pendingBackFile) {
+        let fname = filenameFromPath(entry.backImage);
+        if (pendingBackFile.type === "image/jpeg") {
+          fname = fname.replace(/\.[^/.]+$/, ".jpg");
+          entry.backImage = entry.backImage.replace(/\.[^/.]+$/, ".jpg");
+        }
+        console.debug("admin: writing back file", { originalName: pendingBackFile.name, type: pendingBackFile.type, size: pendingBackFile.size, chosenFilename: fname });
+        await writeFileToDir(bookDir, fname, pendingBackFile);
+      }
     } catch (e) {
       showToast("Saved the book's details, but couldn't copy the photos automatically: " + e.message, true);
     }
