@@ -31,6 +31,14 @@
         </select>
       </label>
     </div>
+    <div class="catalog-toolbar">
+      <input type="search" id="search-input" class="search-input" placeholder="Search by title or author…" aria-label="Search books by title or author">
+      <div class="availability-filters" id="availability-filters">
+        <button type="button" class="tag-chip is-active" data-availability="all">All</button>
+        <button type="button" class="tag-chip" data-availability="available">Available</button>
+        <button type="button" class="tag-chip" data-availability="taken">Given away</button>
+      </div>
+    </div>
     <div class="tag-filters" id="tag-filters" hidden></div>
     <div class="catalog-grid" id="catalog-grid" aria-live="polite"></div>
   </main>
