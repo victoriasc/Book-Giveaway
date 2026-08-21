@@ -1026,7 +1026,7 @@ const BOOKS = [
   },
   {
     "id": "the-little-box-of-economics",
-    "title": "The Little Box of Economics",
+    "title": "The Little Book of Economics",
     "author": "Grep Ip",
     "condition": "Used - old library book",
     "available": true,
