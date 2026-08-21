@@ -168,6 +168,170 @@ const BOOKS = [
     "frontImage": "images/percy-jackson/front.jpg",
     "backImage": "images/percy-jackson/back.jpg",
     "notes": ""
+  },
+  {
+    "id": "percy-jackson-heroes-of-olympus-the-mark-of-athena",
+    "title": "Percy Jackson Heroes of Olympus The Mark of Athena",
+    "author": "Rick Riordan",
+    "condition": "Good - light shelf wear",
+    "available": true,
+    "tags": [
+      "children",
+      "fantasy"
+    ],
+    "frontImage": "images/percy-jackson-heroes-of-olympus-the-mark-of-athena/front.jpg",
+    "backImage": "images/percy-jackson-heroes-of-olympus-the-mark-of-athena/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-great-hunt-wheel-of-time",
+    "title": "The Great Hunt (Wheel of Time)",
+    "author": "Robert Jordan",
+    "condition": "Very Good — light shelf wear, no marks inside",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "fiction"
+    ],
+    "frontImage": "images/the-great-hunt-wheel-of-time/front.jpg",
+    "backImage": "images/the-great-hunt-wheel-of-time/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-dragon-reborn-the-wheel-of-time",
+    "title": "The Dragon Reborn (The Wheel of Time)",
+    "author": "Robert Jordan",
+    "condition": "Very Good — light shelf wear, no marks inside",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "fiction"
+    ],
+    "frontImage": "images/the-dragon-reborn-the-wheel-of-time/front.jpg",
+    "backImage": "images/the-dragon-reborn-the-wheel-of-time/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "ivy-bean",
+    "title": "Ivy + Bean",
+    "author": "Annie Barrows",
+    "condition": "Very Good — light shelf wear, no marks inside",
+    "available": true,
+    "tags": [
+      "children"
+    ],
+    "frontImage": "images/ivy-bean/front.jpg",
+    "backImage": "images/ivy-bean/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "ivy-bean-and-the-ghost-that-had-to-go-ivy-bean-2",
+    "title": "Ivy + Bean And The Ghost That Had To Go (Ivy + Bean 2)",
+    "author": "Annie Burrows",
+    "condition": "Very Good — light shelf wear, no marks inside",
+    "available": true,
+    "tags": [
+      "children"
+    ],
+    "frontImage": "images/ivy-bean-and-the-ghost-that-had-to-go-ivy-bean-2/front.jpg",
+    "backImage": "images/ivy-bean-and-the-ghost-that-had-to-go-ivy-bean-2/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "ivy-bean-break-the-fossil-record",
+    "title": "Ivy + Bean Break the Fossil Record",
+    "author": "Annie Burrows",
+    "condition": "Very Good — light shelf wear, no marks inside",
+    "available": true,
+    "tags": [
+      "children"
+    ],
+    "frontImage": "images/ivy-bean-break-the-fossil-record/front.jpg",
+    "backImage": "images/ivy-bean-break-the-fossil-record/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-red-queen",
+    "title": "The Red Queen",
+    "author": "Philippa Gregory",
+    "condition": "Used",
+    "available": true,
+    "tags": [
+      "historical",
+      "fiction"
+    ],
+    "frontImage": "images/the-red-queen/front.jpg",
+    "backImage": "images/the-red-queen/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "what-happens-now",
+    "title": "What Happens Now?",
+    "author": "Sophia Money-Coutts",
+    "condition": "Very Good — light shelf wear, no marks inside",
+    "available": true,
+    "tags": [
+      "romance",
+      "fiction"
+    ],
+    "frontImage": "images/what-happens-now/front.jpg",
+    "backImage": "images/what-happens-now/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "disquiet-please",
+    "title": "Disquiet Please",
+    "author": "The New Yorker",
+    "condition": "Used - old library book",
+    "available": true,
+    "tags": [
+      "short stories"
+    ],
+    "frontImage": "images/disquiet-please/front.jpg",
+    "backImage": "images/disquiet-please/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "leprechaun-tales",
+    "title": "Leprechaun Tales",
+    "author": "N/A",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "children",
+      "fairytales"
+    ],
+    "frontImage": "images/leprechaun-tales/front.jpg",
+    "backImage": "images/leprechaun-tales/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "irish-fairies",
+    "title": "Irish Fairies",
+    "author": "Appletree Pocket Guides",
+    "condition": "Good - light shelf wear",
+    "available": true,
+    "tags": [
+      "children",
+      "fairytales"
+    ],
+    "frontImage": "images/irish-fairies/front.jpg",
+    "backImage": "images/irish-fairies/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-outsider",
+    "title": "The Outsider",
+    "author": "Camus",
+    "condition": "Very Good — light shelf wear, no marks inside",
+    "available": true,
+    "tags": [
+      "literature",
+      "fiction"
+    ],
+    "frontImage": "images/the-outsider/front.jpg",
+    "backImage": "images/the-outsider/back.jpg",
+    "notes": ""
   }
 ];
 
