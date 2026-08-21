@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage books — admin</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <a class="back-link" href="index.html">Back to the site</a>
+
+  <div class="admin-wrap">
+    <div class="admin-header">
+      <h1>Manage books</h1>
+      <p>Add, edit, and retire books without touching any code. This page isn't linked from
+      your public site — bookmark it for yourself.</p>
+    </div>
+
+    <div class="connect-panel" id="connect-panel">
+      <span class="status-dot"></span>
+      <span class="status-text" id="status-text">Not connected — editing here works, but you'll need to download the file yourself. Connect your project folder to save automatically.</span>
+      <button type="button" class="btn" id="connect-btn">Connect project folder</button>
+    </div>
+
+    <div class="admin-section-title">Your books</div>
+    <div class="admin-list" id="admin-list"></div>
+    <div style="margin-top: 1.25rem;">
+      <button type="button" class="btn" id="add-btn">+ Add a book</button>
+    </div>
+
+    <section id="form-section" hidden>
+      <div class="admin-section-title" id="form-title">Add a book</div>
+      <form class="book-form" id="book-form">
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-title">Title</label>
+            <input type="text" id="f-title" required>
+          </div>
+          <div class="field">
+            <label for="f-author">Author</label>
+            <input type="text" id="f-author" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-id">Id (used in the web address for this book)</label>
+          <input type="text" id="f-id" required pattern="[a-z0-9-]+">
+          <p class="hint">Lowercase letters, numbers, and hyphens only. Filled in automatically from the title — edit if you'd like.</p>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="f-condition">Condition</label>
+            <input type="text" id="f-condition" placeholder="e.g. Good — light shelf wear">
+          </div>
+          <div class="field checkbox-field" style="align-self: end; padding-bottom: 0.6rem;">
+            <input type="checkbox" id="f-available" checked>
+            <label for="f-available">Still available</label>
+          </div>
+        </div>
+
+        <div class="photo-fields">
+          <div class="photo-field-box">
+            <label for="f-front-file">Front photo</label>
+            <div class="preview-row">
+              <img id="front-preview" alt="">
+              <input type="file" id="f-front-file" accept="image/*">
+            </div>
+            <input type="text" id="f-front-path" placeholder="images/book-id/front.jpg">
+          </div>
+          <div class="photo-field-box">
+            <label for="f-back-file">Back photo</label>
+            <div class="preview-row">
+              <img id="back-preview" alt="">
+              <input type="file" id="f-back-file" accept="image/*">
+            </div>
+            <input type="text" id="f-back-path" placeholder="images/book-id/back.jpg">
+          </div>
+        </div>
+        <p class="hint">If you connected your project folder above, picked photos are copied straight into
+        the right images folder when you save. Otherwise, pick them here for a preview and move the files
+        into place by hand afterwards.</p>
+
+        <div class="field">
+          <label for="f-notes">Notes (optional)</label>
+          <textarea id="f-notes" placeholder="e.g. Pickup only, message me if interested."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn danger" id="delete-btn" hidden>Delete book</button>
+          <button type="button" class="btn secondary" id="cancel-btn">Cancel</button>
+          <button type="submit" class="btn">Save book</button>
+        </div>
+      </form>
+    </section>
+
+    <div class="admin-section-title">Not connected to a folder?</div>
+    <p class="hint">Download the updated file below and replace <code>js/books-data.js</code> in your project with it, then commit and push as usual.</p>
+    <button type="button" class="btn secondary" id="download-btn">Download books-data.js</button>
+    <details class="raw-preview">
+      <summary>Preview the generated file</summary>
+      <textarea id="raw-textarea" readonly></textarea>
+    </details>
+
+    <p class="toast" id="toast"></p>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
