@@ -66,12 +66,18 @@
           </div>
         </div>
 
+        <div class="field">
+          <label for="f-tags">Tags (comma-separated)</label>
+          <input type="text" id="f-tags" placeholder="e.g. fantasy, children, non-fiction">
+          <p class="hint">Used to filter the index page. Separate multiple tags with commas.</p>
+        </div>
+
         <div class="photo-fields">
           <div class="photo-field-box">
             <label for="f-front-file">Front photo</label>
             <div class="preview-row">
               <img id="front-preview" alt="">
-              <input type="file" id="f-front-file" accept="image/*">
+              <input type="file" id="f-front-file" accept="image/*,.heic,.heif">
             </div>
             <a class="btn secondary download-photo" id="front-download" href="#" hidden>Download this photo</a>
             <input type="text" id="f-front-path" placeholder="images/book-id/front.jpg">
@@ -80,7 +86,7 @@
             <label for="f-back-file">Back photo</label>
             <div class="preview-row">
               <img id="back-preview" alt="">
-              <input type="file" id="f-back-file" accept="image/*">
+              <input type="file" id="f-back-file" accept="image/*,.heic,.heif">
             </div>
             <a class="btn secondary download-photo" id="back-download" href="#" hidden>Download this photo</a>
             <input type="text" id="f-back-path" placeholder="images/book-id/back.jpg">
@@ -88,7 +94,8 @@
         </div>
         <p class="hint">If you connected your project folder above, picked photos are copied straight into
         the right images folder when you save. Otherwise, pick them here for a preview and move the files
-        into place by hand afterwards.</p>
+        into place by hand afterwards. HEIC/HEIF photos (the default on iPhone) are automatically converted
+        to JPEG when you pick them.</p>
 
         <div class="field">
           <label for="f-notes">Notes (optional)</label>
@@ -114,6 +121,7 @@
     <p class="toast" id="toast"></p>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
   <script src="js/common.js"></script>
   <script src="js/admin.js"></script>
 </body>

@@ -46,6 +46,7 @@ function cacheEls() {
   els.fAuthor = document.getElementById("f-author");
   els.fCondition = document.getElementById("f-condition");
   els.fAvailable = document.getElementById("f-available");
+  els.fTags = document.getElementById("f-tags");
   els.fNotes = document.getElementById("f-notes");
   els.fFrontPath = document.getElementById("f-front-path");
   els.fBackPath = document.getElementById("f-back-path");
@@ -161,11 +162,13 @@ function renderList() {
   books.forEach((book, i) => {
     const row = document.createElement("div");
     row.className = "admin-row";
+    const tags = normalizeTags(book.tags);
     row.innerHTML = `
       <img class="thumb" src="${escapeHtml(book.frontImage || "")}" alt="">
       <div class="info">
         <div class="t">${escapeHtml(book.title || "Untitled")}</div>
         <div class="a">${escapeHtml(book.author || "Unknown author")}</div>
+        ${tags.length ? `<div class="row-tags">${tags.map(t => `<span class="tag-chip-static">${escapeHtml(t)}</span>`).join("")}</div>` : ""}
       </div>
       <div class="row-actions">
         <button type="button" class="pill-toggle ${book.available ? "is-available" : "is-taken"}" data-action="toggle" data-index="${i}">
@@ -215,6 +218,7 @@ function openForm(target) {
     els.fAuthor.value = book.author || "";
     els.fCondition.value = book.condition || "";
     els.fAvailable.checked = !!book.available;
+    els.fTags.value = normalizeTags(book.tags).join(", ");
     els.fNotes.value = book.notes || "";
     els.fFrontPath.value = book.frontImage || "";
     els.fBackPath.value = book.backImage || "";
@@ -236,20 +240,44 @@ function closeForm() {
 function handleFileChosen(evt, which) {
   const file = evt.target.files[0];
   if (!file) return;
+  processChosenFile(file, which);
+}
 
-  if (which === "front") pendingFrontFile = file; else pendingBackFile = file;
-
+// Separated out from the event handler so it can be async without
+// leaving the change handler itself as a dangling promise.
+async function processChosenFile(file, which) {
   const previewImg = which === "front" ? els.frontPreview : els.backPreview;
   const pathField = which === "front" ? els.fFrontPath : els.fBackPath;
   const downloadLink = which === "front" ? els.frontDownload : els.backDownload;
 
+  let outputFile = file;
+  let ext = (file.name.split(".").pop() || "jpg").toLowerCase();
+
+  if (isHeic(file)) {
+    if (typeof window.heic2any === "function") {
+      try {
+        showToast("Converting HEIC photo to JPEG…");
+        outputFile = await convertHeicToJpeg(file);
+        ext = "jpg";
+        showToast("Converted to JPEG.");
+      } catch (e) {
+        showToast("Couldn't convert that HEIC photo automatically — using the original file. " +
+          "You may want to convert it yourself before publishing.", true);
+      }
+    } else {
+      showToast("The HEIC converter didn't load (check your internet connection) — using the " +
+        "original file. You may want to convert it yourself before publishing.", true);
+    }
+  }
+
+  if (which === "front") pendingFrontFile = outputFile; else pendingBackFile = outputFile;
+
   if (previewImg.dataset.objectUrl) URL.revokeObjectURL(previewImg.dataset.objectUrl);
-  const objectUrl = URL.createObjectURL(file);
+  const objectUrl = URL.createObjectURL(outputFile);
   previewImg.src = objectUrl;
   previewImg.dataset.objectUrl = objectUrl;
 
   const id = els.fId.value.trim() || slugify(els.fTitle.value) || "book";
-  const ext = (file.name.split(".").pop() || "jpg").toLowerCase();
   pathField.value = `images/${id}/${which}.${ext}`;
 
   if (downloadLink) {
@@ -257,6 +285,20 @@ function handleFileChosen(evt, which) {
     downloadLink.download = `${which}.${ext}`;
     downloadLink.hidden = false;
   }
+}
+
+function isHeic(file) {
+  const type = (file.type || "").toLowerCase();
+  const name = (file.name || "").toLowerCase();
+  return type === "image/heic" || type === "image/heif" ||
+    name.endsWith(".heic") || name.endsWith(".heif");
+}
+
+async function convertHeicToJpeg(file) {
+  const result = await window.heic2any({ blob: file, toType: "image/jpeg", quality: 0.9 });
+  // heic2any returns an array of Blobs for multi-image HEIC containers (e.g. Live Photos) —
+  // we just want the first/primary image.
+  return Array.isArray(result) ? result[0] : result;
 }
 
 async function handleSave(evt) {
@@ -279,6 +321,7 @@ async function handleSave(evt) {
     author: els.fAuthor.value.trim(),
     condition: els.fCondition.value.trim(),
     available: els.fAvailable.checked,
+    tags: parseTagsInput(els.fTags.value),
     frontImage: els.fFrontPath.value.trim() || `images/${id}/front.jpg`,
     backImage: els.fBackPath.value.trim() || `images/${id}/back.jpg`,
     notes: els.fNotes.value.trim()

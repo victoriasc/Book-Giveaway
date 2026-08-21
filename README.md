@@ -37,6 +37,11 @@ required. It isn't linked from the public site, so bookmark it for yourself.
   to move photo files into the right `images/<book-id>/` folder by hand —
   the form shows you the exact path to use.
 
+If you pick a HEIC/HEIF photo (the default format on iPhone), it's
+automatically converted to JPEG in the browser before it's saved — you don't
+need to convert it yourself first. If you're offline or the converter can't
+load, it falls back to using the original file and lets you know.
+
 Editing `js/books-data.js` directly (below) still works too, any time.
 
 ## Adding a book by hand
@@ -54,6 +59,7 @@ Editing `js/books-data.js` directly (below) still works too, any time.
      author: "F. Scott Fitzgerald",
      condition: "Good — light shelf wear",
      available: true,
+     tags: ["fiction", "classic"],  // shown as chips, and used by the index filter
      frontImage: "images/the-great-gatsby/front.jpg",
      backImage: "images/the-great-gatsby/back.jpg",
      notes: "Optional extra line, e.g. pickup details."
@@ -68,6 +74,19 @@ Editing `js/books-data.js` directly (below) still works too, any time.
 Change that book's `available` field in `js/books-data.js` from `true` to
 `false`. The stamp on both the index card and the book's page switches from
 "Available" to "Given away" automatically.
+
+## Tags and filtering
+
+Give a book a `tags` array (e.g. `["children", "fantasy"]`) and it'll show as
+small chips on its card and detail page. The index page automatically builds
+a row of tag filter buttons from whatever tags exist across your books —
+click one to show only matching books, click "All" to clear the filter.
+Sorting and filtering work together.
+
+## Sorting
+
+The index page can sort by title, by the author's last name (the last word
+in the `author` field), or by availability (available books first).
 
 ## Removing a book entirely
 

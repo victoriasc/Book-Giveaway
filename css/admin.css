@@ -134,6 +134,13 @@
   text-transform: uppercase;
 }
 
+.admin-row .row-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+}
+
 .admin-row .row-actions {
   display: flex;
   gap: 0.4rem;

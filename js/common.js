@@ -42,6 +42,28 @@ function callNumber(book) {
   return `${authorInitial} · ${titleCode}`;
 }
 
+// Best-effort "last name" for sorting authors by surname, e.g.
+// "F. Scott Fitzgerald" -> "Fitzgerald". Just takes the final word, so
+// suffixes like "Jr." or multi-word surnames won't be perfect — good
+// enough for a personal book list.
+function authorSortKey(author) {
+  const trimmed = (author || "").trim();
+  if (!trimmed) return "";
+  const parts = trimmed.split(/\s+/);
+  return parts[parts.length - 1].toLowerCase();
+}
+
+// Normalizes a book's tags into a clean array of trimmed, non-empty strings.
+function normalizeTags(tags) {
+  if (!Array.isArray(tags)) return [];
+  return tags.map(t => String(t).trim()).filter(Boolean);
+}
+
+// Turns a comma-separated string (as typed in the admin form) into a tags array.
+function parseTagsInput(str) {
+  return normalizeTags((str || "").split(","));
+}
+
 function escapeHtml(str) {
   const div = document.createElement("div");
   div.textContent = str == null ? "" : String(str);

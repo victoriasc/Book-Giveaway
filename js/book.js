@@ -27,6 +27,9 @@ function renderBook() {
     <p class="call-number">${escapeHtml(callNumber(book))}</p>
     <h1>${escapeHtml(book.title)}</h1>
     <p class="byline">${escapeHtml(book.author)}</p>
+    ${normalizeTags(book.tags).length
+      ? `<p class="card-tags detail-tags">${normalizeTags(book.tags).map(t => `<span class="tag-chip-static">${escapeHtml(t)}</span>`).join("")}</p>`
+      : ""}
 
     <div class="photo-spread">
       <figure>

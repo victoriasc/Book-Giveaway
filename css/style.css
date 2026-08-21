@@ -130,6 +130,58 @@ a:focus-visible, button:focus-visible, .book-card:focus-visible {
   outline-offset: 2px;
 }
 
+/* ============================================================
+   TAG FILTERS (index page)
+   ============================================================ */
+.tag-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tag-chip {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--card);
+  border: 1px solid var(--rule-strong);
+  padding: 0.35rem 0.7rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.tag-chip:hover {
+  border-color: var(--brass);
+  color: var(--ink);
+}
+
+.tag-chip.is-active {
+  background: var(--brass);
+  border-color: var(--brass);
+  color: var(--card);
+}
+
+.card-tags {
+  margin: 0 0.85rem 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag-chip-static {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+}
+
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -280,6 +332,10 @@ a:focus-visible, button:focus-visible, .book-card:focus-visible {
   letter-spacing: 0.06em;
   color: var(--ink-soft);
   margin-bottom: 1.75rem;
+}
+
+.detail-tags {
+  margin: -1.25rem 0 1.75rem;
 }
 
 .photo-spread {
