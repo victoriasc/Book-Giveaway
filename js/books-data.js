@@ -687,7 +687,7 @@ const BOOKS = [
   },
   {
     "id": "camille-and-madeleine",
-    "title": "Camille and Madeleine",
+    "title": "Camille and Madeleine (The Fleurville Trilogy)",
     "author": "Countess de Segur",
     "condition": "Good - shelf wear",
     "available": true,
@@ -929,13 +929,124 @@ const BOOKS = [
     "condition": "Very Good",
     "available": true,
     "tags": [
-      "hardcover",
+      "hardback",
       "children",
       "nonfiction",
       "science"
     ],
     "frontImage": "images/science-without-the-boring-bits/front.jpg",
     "backImage": "images/science-without-the-boring-bits/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "aunt-dan-and-lemon",
+    "title": "Aunt Dan and Lemon",
+    "author": "Wallace Shawn",
+    "condition": "excellent",
+    "available": true,
+    "tags": [
+      "fiction",
+      "play"
+    ],
+    "frontImage": "images/aunt-dan-and-lemon/front.jpg",
+    "backImage": "images/aunt-dan-and-lemon/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-way-of-kings-stormlight-archive-1",
+    "title": "The Way of Kings (Stormlight Archive 1)",
+    "author": "Brandon Sanderson",
+    "condition": "Very Good — light shelf wear",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "fiction"
+    ],
+    "frontImage": "images/the-way-of-kings-stormlight-archive-1/front.jpg",
+    "backImage": "images/the-way-of-kings-stormlight-archive-1/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "words-of-radiance-stormlight-archive-2",
+    "title": "Words of Radiance (Stormlight Archive 2)",
+    "author": "Brandon Sanderson",
+    "condition": "Very good - light shelf wear",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "fiction"
+    ],
+    "frontImage": "images/words-of-radiance-stormlight-archive-2/front.jpg",
+    "backImage": "images/words-of-radiance-stormlight-archive-2/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "othello",
+    "title": "Othello",
+    "author": "William Shakespeare",
+    "condition": "used - highlighter inside",
+    "available": true,
+    "tags": [
+      "literature",
+      "play"
+    ],
+    "frontImage": "images/othello/front.jpg",
+    "backImage": "images/othello/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "australian-concise-oxford-dictionary",
+    "title": "Australian Concise Oxford Dictionary",
+    "author": "N/A",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "nonfiction",
+      "reference"
+    ],
+    "frontImage": "images/australian-concise-oxford-dictionary/front.jpg",
+    "backImage": "images/australian-concise-oxford-dictionary/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "rhythm-of-nature",
+    "title": "Rhythm of Nature",
+    "author": "Heather Gall",
+    "condition": "Very good",
+    "available": true,
+    "tags": [
+      "poetry",
+      "signed by author"
+    ],
+    "frontImage": "images/rhythm-of-nature/front.jpg",
+    "backImage": "images/rhythm-of-nature/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-little-box-of-economics",
+    "title": "The Little Box of Economics",
+    "author": "Grep Ip",
+    "condition": "Used - old library book",
+    "available": true,
+    "tags": [
+      "nonfiction"
+    ],
+    "frontImage": "images/the-little-box-of-economics/front.jpg",
+    "backImage": "images/the-little-box-of-economics/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "memories",
+    "title": "Memories",
+    "author": "Lang Leav",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "poetry",
+      "hardback"
+    ],
+    "frontImage": "images/memories/front.jpg",
+    "backImage": "images/memories/back.jpg",
     "notes": ""
   }
 ];
