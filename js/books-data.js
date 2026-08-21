@@ -543,6 +543,171 @@ const BOOKS = [
     "frontImage": "images/law-s-strangest-cases/front.jpg",
     "backImage": "images/law-s-strangest-cases/back.jpg",
     "notes": ""
+  },
+  {
+    "id": "the-odd-woman-and-the-city",
+    "title": "The Odd Woman and the City",
+    "author": "Vivian Gornick",
+    "condition": "Used - old library book",
+    "available": true,
+    "tags": [
+      "nonfiction",
+      "biography"
+    ],
+    "frontImage": "images/the-odd-woman-and-the-city/front.jpg",
+    "backImage": "images/the-odd-woman-and-the-city/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "witches-abroad-discworld",
+    "title": "Witches Abroad (Discworld)",
+    "author": "Terry Pratchett",
+    "condition": "Used - library book",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "fiction"
+    ],
+    "frontImage": "images/witches-abroad-discworld/front.jpg",
+    "backImage": "images/witches-abroad-discworld/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "cats",
+    "title": "Cats",
+    "author": "N/A",
+    "condition": "Very Good — light shelf wear",
+    "available": true,
+    "tags": [
+      "nonfiction",
+      "animals",
+      "children"
+    ],
+    "frontImage": "images/cats/front.jpg",
+    "backImage": "images/cats/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "krondor-tear-of-the-gods",
+    "title": "Krondor: Tear of the Gods",
+    "author": "Raymond E. Feist",
+    "condition": "Good - shelf wear",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "fiction"
+    ],
+    "frontImage": "images/krondor-tear-of-the-gods/front.jpg",
+    "backImage": "images/krondor-tear-of-the-gods/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "constance-the-tragic-and-scandalous-life-of-mrs-oscar-wilde",
+    "title": "Constance The Tragic and Scandalous Life of Mrs Oscar Wilde",
+    "author": "Franny Moyle",
+    "condition": "Good - light shelf wear",
+    "available": true,
+    "tags": [
+      "nonfiction",
+      "biography"
+    ],
+    "frontImage": "images/constance-the-tragic-and-scandalous-life-of-mrs-oscar-wilde/front.jpg",
+    "backImage": "images/constance-the-tragic-and-scandalous-life-of-mrs-oscar-wilde/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "station-eleven",
+    "title": "Station Eleven",
+    "author": "Emily St John Mandel",
+    "condition": "Very Good — light shelf wear",
+    "available": true,
+    "tags": [
+      "fiction",
+      "contemporary literature",
+      "dystopia"
+    ],
+    "frontImage": "images/station-eleven/front.jpg",
+    "backImage": "images/station-eleven/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "utterly-me-clarice-bean",
+    "title": "Utterly Me, Clarice Bean",
+    "author": "Lauren Child",
+    "condition": "Used",
+    "available": true,
+    "tags": [
+      "Children"
+    ],
+    "frontImage": "images/utterly-me-clarice-bean/front.jpg",
+    "backImage": "images/utterly-me-clarice-bean/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "don-t-look-now-clarice-bean",
+    "title": "Don't Look Now (Clarice Bean)",
+    "author": "Lauren Child",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "children"
+    ],
+    "frontImage": "images/don-t-look-now-clarice-bean/front.jpg",
+    "backImage": "images/don-t-look-now-clarice-bean/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "clarice-bean-spells-trouble",
+    "title": "Clarice Bean Spells Trouble",
+    "author": "Lauren Child",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "children"
+    ],
+    "frontImage": "images/clarice-bean-spells-trouble/front.jpg",
+    "backImage": "images/clarice-bean-spells-trouble/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "sophie-s-misfortunes-the-fleurville-trilogy",
+    "title": "Sophie's Misfortunes (The Fleurville Trilogy)",
+    "author": "Countess de Segur",
+    "condition": "Good - shelf wear",
+    "available": true,
+    "tags": [
+      "children"
+    ],
+    "frontImage": "images/sophie-s-misfortunes-the-fleurville-trilogy/front.jpg",
+    "backImage": "images/sophie-s-misfortunes-the-fleurville-trilogy/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "camille-and-madeleine",
+    "title": "Camille and Madeleine",
+    "author": "Countess de Segur",
+    "condition": "Good - shelf wear",
+    "available": true,
+    "tags": [
+      "children"
+    ],
+    "frontImage": "images/camille-and-madeleine/front.jpg",
+    "backImage": "images/camille-and-madeleine/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-diary-of-a-young-girl-anne-frank",
+    "title": "The Diary of a Young Girl (Anne Frank)",
+    "author": "Anne Frank",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "children",
+      "historical"
+    ],
+    "frontImage": "images/the-diary-of-a-young-girl-anne-frank/front.jpg",
+    "backImage": "images/the-diary-of-a-young-girl-anne-frank/back.jpg",
+    "notes": ""
   }
 ];
 
