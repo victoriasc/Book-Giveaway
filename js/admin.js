@@ -306,10 +306,81 @@ function isHeic(file) {
 }
 
 async function convertHeicToJpeg(file) {
-  const result = await window.heic2any({ blob: file, toType: "image/jpeg", quality: 0.9 });
-  // heic2any returns an array of Blobs for multi-image HEIC containers (e.g. Live Photos) —
-  // we just want the first/primary image.
-  return Array.isArray(result) ? result[0] : result;
+  // Prefer the library conversion but fall back to a canvas-based approach when it can't parse.
+  if (typeof window.heic2any === "function") {
+    try {
+      const result = await window.heic2any({ blob: file, toType: "image/jpeg", quality: 0.9 });
+      return Array.isArray(result) ? result[0] : result;
+    } catch (e) {
+      console.debug("heic2any failed:", e);
+      // fall through to canvas fallback
+    }
+  }
+
+  // Canvas fallback: try to decode the blob into an ImageBitmap or HTMLImageElement,
+  // draw it to a canvas and export a JPEG blob.
+  try {
+    return await convertImageBlobToJpegViaCanvas(file, 0.9);
+  } catch (e) {
+    console.debug("canvas fallback failed:", e);
+    throw e; // let caller handle the failure
+  }
+}
+
+async function convertImageBlobToJpegViaCanvas(blob, quality = 0.9) {
+  // Try createImageBitmap first (faster, no DOM). If that fails, use an <img> element.
+  let imgBitmap = null;
+  try {
+    imgBitmap = await createImageBitmap(blob);
+  } catch (e) {
+    // createImageBitmap may not support this format; try using an Image element as a fallback
+    const objectUrl = URL.createObjectURL(blob);
+    try {
+      imgBitmap = await new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+          try {
+            const canvas = document.createElement("canvas");
+            canvas.width = img.naturalWidth || img.width;
+            canvas.height = img.naturalHeight || img.height;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0);
+            canvas.toBlob((b) => {
+              if (b) resolve(b); else reject(new Error("Canvas toBlob returned null"));
+            }, "image/jpeg", quality);
+          } catch (err) {
+            reject(err);
+          }
+        };
+        img.onerror = (err) => reject(err || new Error("Image load error"));
+        img.src = objectUrl;
+      });
+      // If the promise resolved with a Blob from canvas.toBlob, return that
+      if (imgBitmap instanceof Blob) return imgBitmap;
+      // Otherwise, fall through to use the ImageBitmap path below
+    } finally {
+      URL.revokeObjectURL(objectUrl);
+    }
+  }
+
+  // If we have an ImageBitmap, draw it to canvas and export a JPEG blob.
+  if (imgBitmap) {
+    // If imgBitmap is already a Blob returned by the <img> fallback, return it.
+    if (imgBitmap instanceof Blob) return imgBitmap;
+
+    const width = imgBitmap.width || imgBitmap.naturalWidth;
+    const height = imgBitmap.height || imgBitmap.naturalHeight;
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(imgBitmap, 0, 0);
+    const jpegBlob = await new Promise((resolve, reject) => {
+      canvas.toBlob((b) => { if (b) resolve(b); else reject(new Error("canvas.toBlob returned null")); }, "image/jpeg", quality);
+    });
+    return jpegBlob;
+  }
+  throw new Error("Could not convert image blob to JPEG via canvas");
 }
 
 async function handleSave(evt) {
