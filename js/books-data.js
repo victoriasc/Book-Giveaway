@@ -34,6 +34,56 @@ const BOOKS = [
     "frontImage": "images/the-book-thief/front.heic",
     "backImage": "images/the-book-thief/back.heic",
     "notes": ""
+  },
+  {
+    "id": "love-virtue",
+    "title": "Love & Virtue",
+    "author": "Diana Reid",
+    "condition": "Good - light shelf wear",
+    "available": true,
+    "frontImage": "images/love-virtue/front.heic",
+    "backImage": "images/love-virtue/back.heic",
+    "notes": ""
+  },
+  {
+    "id": "the-assault",
+    "title": "The Assault",
+    "author": "Harry Mulisch",
+    "condition": "Good - light shelf wear",
+    "available": true,
+    "frontImage": "images/the-assault/front.heic",
+    "backImage": "images/the-assault/back.heic",
+    "notes": ""
+  },
+  {
+    "id": "the-bread-the-devil-knead",
+    "title": "The Bread the Devil Knead",
+    "author": "Lisa Allen-Agostini",
+    "condition": "Very Good",
+    "available": true,
+    "frontImage": "images/the-bread-the-devil-knead/front.heic",
+    "backImage": "images/the-bread-the-devil-knead/back.heic",
+    "notes": ""
+  },
+  {
+    "id": "my-own-words",
+    "title": "My Own Words",
+    "author": "Ruth Bader Ginsburg",
+    "condition": "Very Good",
+    "available": true,
+    "frontImage": "images/my-own-words/front.heic",
+    "backImage": "images/my-own-words/back.heic",
+    "notes": ""
+  },
+  {
+    "id": "the-better-angels-of-our-nature",
+    "title": "The Better Angels of Our Nature",
+    "author": "Steven Pinker",
+    "condition": "Used - Old Library Book",
+    "available": true,
+    "frontImage": "images/the-better-angels-of-our-nature/front.heic",
+    "backImage": "images/the-better-angels-of-our-nature/back.heic",
+    "notes": ""
   }
 ];
 
