@@ -1243,6 +1243,91 @@ const BOOKS = [
     "frontImage": "images/the-little-princess/front.jpg",
     "backImage": "images/the-little-princess/back.jpg",
     "notes": ""
+  },
+  {
+    "id": "a-wrinkle-in-time",
+    "title": "A Wrinkle in Time",
+    "author": "Madeleine L'Engle",
+    "condition": "Good - some writing on first page",
+    "available": true,
+    "tags": [
+      "children"
+    ],
+    "frontImage": "images/a-wrinkle-in-time/front.jpg",
+    "backImage": "images/a-wrinkle-in-time/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-road",
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "literature",
+      "fiction",
+      "dystopia"
+    ],
+    "frontImage": "images/the-road/front.jpg",
+    "backImage": "images/the-road/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "rumpelstiltskin",
+    "title": "Rumpelstiltskin",
+    "author": "Paul O Zelinsky",
+    "condition": "Good - writing on front page",
+    "available": true,
+    "tags": [
+      "children",
+      "fairytales"
+    ],
+    "frontImage": "images/rumpelstiltskin/front.jpg",
+    "backImage": "images/rumpelstiltskin/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "nineteen-eighty-four",
+    "title": "Nineteen Eighty-Four",
+    "author": "George Orwell",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "dystopia",
+      "fiction",
+      "literature"
+    ],
+    "frontImage": "images/nineteen-eighty-four/front.jpg",
+    "backImage": "images/nineteen-eighty-four/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-wife-of-martin-guerre",
+    "title": "The Wife of Martin Guerre",
+    "author": "Janet Lewis",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "literature",
+      "fiction"
+    ],
+    "frontImage": "images/the-wife-of-martin-guerre/front.jpg",
+    "backImage": "images/the-wife-of-martin-guerre/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "pride-and-prejudice",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "literature",
+      "fiction"
+    ],
+    "frontImage": "images/pride-and-prejudice/front.jpg",
+    "backImage": "images/pride-and-prejudice/back.jpg",
+    "notes": ""
   }
 ];
 
