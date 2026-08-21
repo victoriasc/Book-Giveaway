@@ -14,6 +14,26 @@ const BOOKS = [
     "frontImage": "images/night-walking/front.heic",
     "backImage": "images/night-walking/back.heic",
     "notes": "Pickup only, East Melbourne. Message me if you'd like it."
+  },
+  {
+    "id": "anne-of-green-gables",
+    "title": "Anne of Green Gables",
+    "author": "L. M. Montgomery",
+    "condition": "Good - light shelf wear",
+    "available": true,
+    "frontImage": "images/anne-of-green-gables/front.heic",
+    "backImage": "images/anne-of-green-gables/back.heic",
+    "notes": ""
+  },
+  {
+    "id": "the-book-thief",
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "condition": "Used - old library book",
+    "available": true,
+    "frontImage": "images/the-book-thief/front.heic",
+    "backImage": "images/the-book-thief/back.heic",
+    "notes": ""
   }
 ];
 
