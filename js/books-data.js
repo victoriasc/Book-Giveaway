@@ -12,7 +12,8 @@ const BOOKS = [
     "condition": "Very Good — light shelf wear, no marks inside",
     "available": true,
     "tags": [
-      "nonfiction"
+      "nonfiction",
+      "hardback"
     ],
     "frontImage": "images/night-walking/front.jpg",
     "backImage": "images/night-walking/back.jpg",
@@ -538,7 +539,8 @@ const BOOKS = [
     "available": true,
     "tags": [
       "law",
-      "nonfiction"
+      "nonfiction",
+      "hardback"
     ],
     "frontImage": "images/law-s-strangest-cases/front.jpg",
     "backImage": "images/law-s-strangest-cases/back.jpg",
@@ -581,7 +583,8 @@ const BOOKS = [
     "tags": [
       "nonfiction",
       "animals",
-      "children"
+      "children",
+      "hardback"
     ],
     "frontImage": "images/cats/front.jpg",
     "backImage": "images/cats/back.jpg",
@@ -707,6 +710,232 @@ const BOOKS = [
     ],
     "frontImage": "images/the-diary-of-a-young-girl-anne-frank/front.jpg",
     "backImage": "images/the-diary-of-a-young-girl-anne-frank/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-children-of-green-knowe",
+    "title": "The Children of Green Knowe",
+    "author": "Lucy M. Boston",
+    "condition": "Good - small piece of writing on first page",
+    "available": true,
+    "tags": [
+      "children",
+      "fantasy"
+    ],
+    "frontImage": "images/the-children-of-green-knowe/front.jpg",
+    "backImage": "images/the-children-of-green-knowe/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-wizard-of-oz",
+    "title": "The Wizard of Oz",
+    "author": "L. Frank Baum",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "children",
+      "literature"
+    ],
+    "frontImage": "images/the-wizard-of-oz/front.jpg",
+    "backImage": "images/the-wizard-of-oz/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "mort-discworld",
+    "title": "Mort (Discworld)",
+    "author": "Terry Pratchett",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "fiction"
+    ],
+    "frontImage": "images/mort-discworld/front.jpg",
+    "backImage": "images/mort-discworld/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "magician-s-nephew-narnia-1",
+    "title": "Magician's Nephew (Narnia 1)",
+    "author": "C.S. Lewis",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/magician-s-nephew-narnia-1/front.jpg",
+    "backImage": "images/magician-s-nephew-narnia-1/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-lion-the-witch-and-the-wardrobe",
+    "title": "The Lion, the Witch and the Wardrobe (Narnia 2)",
+    "author": "C.S. Lewis",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "children",
+      "fantasy"
+    ],
+    "frontImage": "images/the-lion-the-witch-and-the-wardrobe/front.jpg",
+    "backImage": "images/the-lion-the-witch-and-the-wardrobe/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-horse-and-his-boy-narnia-2",
+    "title": "The Horse and His Boy (Narnia 3)",
+    "author": "C.S. Lewis",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "children",
+      "fantasy"
+    ],
+    "frontImage": "images/the-horse-and-his-boy-narnia-2/front.jpg",
+    "backImage": "images/the-horse-and-his-boy-narnia-2/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "prince-caspian-narnia-4",
+    "title": "Prince Caspian (Narnia 4)",
+    "author": "C.S. Lewis",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/prince-caspian-narnia-4/front.jpg",
+    "backImage": "images/prince-caspian-narnia-4/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-voyage-of-the-dawn-trader-narnia-5",
+    "title": "The Voyage of the Dawn Trader (Narnia 5)",
+    "author": "C.S. Lewis",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/the-voyage-of-the-dawn-trader-narnia-5/front.jpg",
+    "backImage": "images/the-voyage-of-the-dawn-trader-narnia-5/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-silver-chair-narnia-6",
+    "title": "The Silver Chair (Narnia 6)",
+    "author": "C.S. Lewis",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/the-silver-chair-narnia-6/front.jpg",
+    "backImage": "images/the-silver-chair-narnia-6/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-last-battle-narnia-7",
+    "title": "The Last Battle (Narnia 7)",
+    "author": "C.S. Lewis",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/the-last-battle-narnia-7/front.jpg",
+    "backImage": "images/the-last-battle-narnia-7/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "silent-night-and-other-christmas-carols",
+    "title": "Silent Night and Other Christmas Carols",
+    "author": "N/A",
+    "condition": "Good - beautiful book but with some tears",
+    "available": true,
+    "tags": [
+      "children",
+      "fairytales"
+    ],
+    "frontImage": "images/silent-night-and-other-christmas-carols/front.jpg",
+    "backImage": "images/silent-night-and-other-christmas-carols/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "flora-ulysses",
+    "title": "Flora & Ulysses",
+    "author": "Kate DiCamillo",
+    "condition": "Very good",
+    "available": true,
+    "tags": [
+      "children",
+      "hardback"
+    ],
+    "frontImage": "images/flora-ulysses/front.jpg",
+    "backImage": "images/flora-ulysses/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "losing-it",
+    "title": "Losing It",
+    "author": "Ranjit Bolt",
+    "condition": "Used - old library book",
+    "available": true,
+    "tags": [
+      "fiction",
+      "poetry"
+    ],
+    "frontImage": "images/losing-it/front.jpg",
+    "backImage": "images/losing-it/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-key-to-rondo-rondo-1",
+    "title": "The Key to Rondo (Rondo 1)",
+    "author": "Emily Rodda",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "children",
+      "fantasy"
+    ],
+    "frontImage": "images/the-key-to-rondo/front.jpg",
+    "backImage": "images/the-key-to-rondo/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-wizard-of-rondo-rondo-2",
+    "title": "The Wizard of Rondo (Rondo 2)",
+    "author": "Emily Rodda",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "children",
+      "fantasy"
+    ],
+    "frontImage": "images/the-wizard-of-rondo/front.jpg",
+    "backImage": "images/the-wizard-of-rondo-rondo-2/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "science-without-the-boring-bits",
+    "title": "Science without the Boring Bits",
+    "author": "Ian Crofton",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "hardcover",
+      "children",
+      "nonfiction",
+      "science"
+    ],
+    "frontImage": "images/science-without-the-boring-bits/front.jpg",
+    "backImage": "images/science-without-the-boring-bits/back.jpg",
     "notes": ""
   }
 ];
