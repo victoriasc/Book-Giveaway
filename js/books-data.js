@@ -904,8 +904,8 @@ const BOOKS = [
       "children",
       "fantasy"
     ],
-    "frontImage": "images/the-key-to-rondo/front.jpg",
-    "backImage": "images/the-key-to-rondo/back.jpg",
+    "frontImage": "images/the-key-to-rondo-rondo-1/front.jpg",
+    "backImage": "images/the-key-to-rondo-rondo-1/back.jpg",
     "notes": ""
   },
   {
@@ -918,7 +918,7 @@ const BOOKS = [
       "children",
       "fantasy"
     ],
-    "frontImage": "images/the-wizard-of-rondo/front.jpg",
+    "frontImage": "images/the-wizard-of-rondo-rondo-2/front.jpg",
     "backImage": "images/the-wizard-of-rondo-rondo-2/back.jpg",
     "notes": ""
   },
