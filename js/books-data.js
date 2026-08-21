@@ -138,16 +138,16 @@ const BOOKS = [
     "notes": ""
   },
   {
-    "id": "test",
-    "title": "test",
-    "author": "test",
+    "id": "test-2",
+    "title": "Test 2",
+    "author": "test 2",
     "condition": "test",
     "available": true,
     "tags": [
       "fantasy"
     ],
-    "frontImage": "images/test/front.heic",
-    "backImage": "images/test/back.heic",
+    "frontImage": "images/book/front.heic",
+    "backImage": "images/test-2/back.heic",
     "notes": ""
   }
 ];
