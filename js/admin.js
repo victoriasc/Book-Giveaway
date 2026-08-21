@@ -261,27 +261,30 @@ async function processChosenFile(file, which) {
       try {
         showToast("Converting HEIC photo to JPEG…");
         console.debug("admin: attempting heic2any conversion for", file.name);
-        const conv = await convertHeicToJpeg(file);
-        // heic2any may return an array of blobs for multi-image containers — pick first
-        const convBlob = Array.isArray(conv) ? conv[0] : conv;
-        if (convBlob instanceof Blob) {
-          // create a File with a .jpg filename so downloads and writes use the correct extension
-          const baseName = (file.name || "photo").replace(/\.(heic|heif)$/i, "");
-          outputFile = new File([convBlob], `${baseName}.jpg`, { type: "image/jpeg" });
-          ext = "jpg";
-          showToast("Converted to JPEG.");
-        } else {
-          // fallback to whatever was returned
-          outputFile = file;
-          showToast("Couldn't convert that HEIC photo automatically — using the original file.", true);
+          const conv = await convertHeicToJpeg(file);
+          // heic2any may return an array of blobs for multi-image containers — pick first
+          const convBlob = Array.isArray(conv) ? conv[0] : conv;
+          if (convBlob instanceof Blob) {
+            // create a File with a .jpg filename so downloads and writes use the correct extension
+            const baseName = (file.name || "photo").replace(/\.(heic|heif)$/i, "");
+            outputFile = new File([convBlob], `${baseName}.jpg`, { type: "image/jpeg" });
+            ext = "jpg";
+            showToast("Converted to JPEG.");
+          } else {
+            // conversion did not produce a blob — treat as failure
+            showToast("Couldn't convert that HEIC photo automatically — please convert it manually before publishing.", true);
+            console.debug("admin: conversion returned non-blob, skipping automatic save for", file.name, conv);
+            outputFile = null;
         }
       } catch (e) {
-        showToast("Couldn't convert that HEIC photo automatically — using the original file. " +
-          "You may want to convert it yourself before publishing.", true);
+          showToast("Couldn't convert that HEIC photo automatically — please convert it manually before publishing.", true);
+          console.debug("admin: heic2any error", e);
+          outputFile = null;
       }
     } else {
-      showToast("The HEIC converter didn't load (check your internet connection) — using the " +
-        "original file. You may want to convert it yourself before publishing.", true);
+        showToast("The HEIC converter didn't load (check your internet connection) — please convert the file manually before publishing.", true);
+        console.debug("admin: heic2any not available");
+        outputFile = null;
     }
   }
 
@@ -289,8 +292,11 @@ async function processChosenFile(file, which) {
 
   if (previewImg.dataset.objectUrl) URL.revokeObjectURL(previewImg.dataset.objectUrl);
   const objectUrl = URL.createObjectURL(outputFile);
-  previewImg.src = objectUrl;
-  previewImg.dataset.objectUrl = objectUrl;
+    // If outputFile is null (conversion failed), still preview the original file
+    const previewSource = outputFile || file;
+    const objectUrl = URL.createObjectURL(previewSource);
+    previewImg.src = objectUrl;
+    previewImg.dataset.objectUrl = objectUrl;
 
   const id = els.fId.value.trim() || slugify(els.fTitle.value) || "book";
   pathField.value = `images/${id}/${which}.${ext}`;
@@ -299,6 +305,11 @@ async function processChosenFile(file, which) {
     downloadLink.href = objectUrl;
     downloadLink.download = `${which}.${ext}`;
     downloadLink.hidden = false;
+      if (!outputFile) {
+        // If we couldn't convert, make it clear the download is the original HEIC
+        downloadLink.textContent = "Download original (HEIC)";
+      } else {
+        downloadLink.textContent = "Download this photo";
   }
 }
 
@@ -310,14 +321,36 @@ function isHeic(file) {
 }
 
 async function convertHeicToJpeg(file) {
-  // Prefer the library conversion but fall back to a canvas-based approach when it can't parse.
+  // Try Chrome's native ImageDecoder first (best chance in modern Chrome).
+  if (typeof ImageDecoder !== "undefined") {
+    try {
+      const decoder = new ImageDecoder({ data: file, type: file.type || "image/heic" });
+      const result = await decoder.decode();
+      const imgBitmap = result.image;
+      if (imgBitmap) {
+        const canvas = document.createElement("canvas");
+        canvas.width = imgBitmap.width || imgBitmap.naturalWidth || 0;
+        canvas.height = imgBitmap.height || imgBitmap.naturalHeight || 0;
+        const ctx = canvas.getContext("2d");
+        ctx.drawImage(imgBitmap, 0, 0);
+        const jpegBlob = await new Promise((resolve, reject) => {
+          canvas.toBlob((b) => { if (b) resolve(b); else reject(new Error("ImageDecoder canvas toBlob returned null")); }, "image/jpeg", 0.9);
+        });
+        return jpegBlob;
+      }
+    } catch (e) {
+      console.debug("ImageDecoder failed:", e);
+      // fall through to other strategies
+    }
+  }
+
+  // Prefer the library conversion next, then canvas fallback.
   if (typeof window.heic2any === "function") {
     try {
       const result = await window.heic2any({ blob: file, toType: "image/jpeg", quality: 0.9 });
       return Array.isArray(result) ? result[0] : result;
     } catch (e) {
       console.debug("heic2any failed:", e);
-      // fall through to canvas fallback
     }
   }
 
