@@ -251,6 +251,12 @@
   font-size: 0.75rem;
 }
 
+.download-photo {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 0.6rem;
+}
+
 .form-actions {
   display: flex;
   gap: 0.6rem;

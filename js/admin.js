@@ -53,6 +53,8 @@ function cacheEls() {
   els.fBackFile = document.getElementById("f-back-file");
   els.frontPreview = document.getElementById("front-preview");
   els.backPreview = document.getElementById("back-preview");
+  els.frontDownload = document.getElementById("front-download");
+  els.backDownload = document.getElementById("back-download");
 }
 
 function wireStaticEvents() {
@@ -93,8 +95,9 @@ async function tryFallbackLoad() {
     const res = await fetch("js/books-data.js");
     if (!res.ok) return;
     const text = await res.text();
+    if (projectDirHandle) return; // a folder was connected while this fetch was in flight — don't clobber it
     const parsed = parseBooksFile(text);
-    if (parsed) {
+    if (parsed && !projectDirHandle) {
       books = parsed;
       renderList();
     }
@@ -124,6 +127,8 @@ async function connectFolder() {
   } catch (e) {
     setStatus(`Connected to "${projectDirHandle.name}", but couldn't find js/books-data.js there — ` +
       `make sure you picked the folder that contains index.html.`, true);
+    projectDirHandle = null; // don't keep writing to a folder we couldn't confirm is right
+    els.connectPanel.classList.remove("connected");
   }
 }
 
@@ -193,6 +198,10 @@ function openForm(target) {
   pendingBackFile = null;
   els.frontPreview.src = PLACEHOLDER_IMG;
   els.backPreview.src = PLACEHOLDER_IMG;
+  delete els.frontPreview.dataset.objectUrl;
+  delete els.backPreview.dataset.objectUrl;
+  els.frontDownload.hidden = true;
+  els.backDownload.hidden = true;
   els.deleteBtn.hidden = target === "new";
 
   if (target === "new") {
@@ -232,11 +241,22 @@ function handleFileChosen(evt, which) {
 
   const previewImg = which === "front" ? els.frontPreview : els.backPreview;
   const pathField = which === "front" ? els.fFrontPath : els.fBackPath;
-  previewImg.src = URL.createObjectURL(file);
+  const downloadLink = which === "front" ? els.frontDownload : els.backDownload;
+
+  if (previewImg.dataset.objectUrl) URL.revokeObjectURL(previewImg.dataset.objectUrl);
+  const objectUrl = URL.createObjectURL(file);
+  previewImg.src = objectUrl;
+  previewImg.dataset.objectUrl = objectUrl;
 
   const id = els.fId.value.trim() || slugify(els.fTitle.value) || "book";
   const ext = (file.name.split(".").pop() || "jpg").toLowerCase();
   pathField.value = `images/${id}/${which}.${ext}`;
+
+  if (downloadLink) {
+    downloadLink.href = objectUrl;
+    downloadLink.download = `${which}.${ext}`;
+    downloadLink.hidden = false;
+  }
 }
 
 async function handleSave(evt) {
@@ -287,8 +307,8 @@ async function handleSave(evt) {
   await persist();
 
   if (!projectDirHandle && (pendingFrontFile || pendingBackFile)) {
-    showToast("Saved in the editor. Remember to move your photo(s) into " +
-      `images/${id}/ manually (or download them below), then download books-data.js.`);
+    showToast("Saved in the editor. Use the \u201cdownload photo\u201d link next to each picture to save it, " +
+      `move it into images/${id}/, then download books-data.js below.`);
   }
 }
 
