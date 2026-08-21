@@ -332,6 +332,104 @@ const BOOKS = [
     "frontImage": "images/the-outsider/front.jpg",
     "backImage": "images/the-outsider/back.jpg",
     "notes": ""
+  },
+  {
+    "id": "harry-potter-and-the-philosopher-s-stone-harry-potter-1",
+    "title": "Harry Potter and the Philosopher's Stone (Harry Potter 1)",
+    "author": "J.K. Rowling",
+    "condition": "Used",
+    "available": true,
+    "tags": [
+      "children",
+      "fantasy"
+    ],
+    "frontImage": "images/harry-potter-and-the-philosopher-s-stone-harry-potter-1/front.jpg",
+    "backImage": "images/harry-potter-and-the-philosopher-s-stone-harry-potter-1/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "harry-potter-and-the-chamber-of-secrets-harry-potter-2",
+    "title": "Harry Potter and the Chamber of Secrets (Harry Potter 2)",
+    "author": "J.K. Rowling",
+    "condition": "Used",
+    "available": true,
+    "tags": [
+      "children",
+      "fantasy"
+    ],
+    "frontImage": "images/harry-potter-and-the-chamber-of-secrets-harry-potter-2/front.jpg",
+    "backImage": "images/harry-potter-and-the-chamber-of-secrets-harry-potter-2/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "harry-potter-and-the-prisoner-of-azkaban-harry-potter-3",
+    "title": "Harry Potter and the Prisoner of Azkaban (Harry Potter 3)",
+    "author": "J.K. Rowling",
+    "condition": "Used",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/harry-potter-and-the-prisoner-of-azkaban-harry-potter-3/front.jpg",
+    "backImage": "images/harry-potter-and-the-prisoner-of-azkaban-harry-potter-3/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "harry-potter-and-the-philosopher-s-stone-harry-potter-1-2",
+    "title": "Harry Potter and the Philosopher's Stone (Harry Potter 1)",
+    "author": "J.K. Rowling",
+    "condition": "Used",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/harry-potter-and-the-philosopher-s-stone-harry-potter-1-2/front.jpg",
+    "backImage": "images/harry-potter-and-the-philosopher-s-stone-harry-potter-1-2/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "harry-potter-and-the-goblet-of-fire-harry-potter-4",
+    "title": "Harry Potter and the Goblet of Fire (Harry Potter 4)",
+    "author": "J.K. Rowling",
+    "condition": "Used",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/harry-potter-and-the-goblet-of-fire-harry-potter-4/front.jpg",
+    "backImage": "images/harry-potter-and-the-goblet-of-fire-harry-potter-4/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "harry-potter-and-the-order-of-the-phoenix-harry-potter-5",
+    "title": "Harry Potter and the Order of the Phoenix (Harry Potter 5)",
+    "author": "J.K. Rowling",
+    "condition": "Used",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/harry-potter-and-the-order-of-the-phoenix-harry-potter-5/front.jpg",
+    "backImage": "images/harry-potter-and-the-order-of-the-phoenix-harry-potter-5/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "harry-potter-and-the-half-blood-prince-book-6",
+    "title": "Harry Potter and the Half-Blood Prince (Book 6)",
+    "author": "J.K. Rowling",
+    "condition": "Used",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/harry-potter-and-the-half-blood-prince-book-6/front.jpg",
+    "backImage": "images/harry-potter-and-the-half-blood-prince-book-6/back.jpg",
+    "notes": ""
   }
 ];
 
