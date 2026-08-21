@@ -94,7 +94,8 @@ const BOOKS = [
     "available": true,
     "tags": [
       "nonfiction",
-      "biography"
+      "biography",
+      "law"
     ],
     "frontImage": "images/my-own-words/front.jpg",
     "backImage": "images/my-own-words/back.jpg",
@@ -429,6 +430,118 @@ const BOOKS = [
     ],
     "frontImage": "images/harry-potter-and-the-half-blood-prince-book-6/front.jpg",
     "backImage": "images/harry-potter-and-the-half-blood-prince-book-6/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "emily-s-quest",
+    "title": "Emily's Quest",
+    "author": "L.M. Montgomery",
+    "condition": "Very Good — light shelf wear, no marks inside",
+    "available": true,
+    "tags": [
+      "children"
+    ],
+    "frontImage": "images/emily-s-quest/front.jpg",
+    "backImage": "images/emily-s-quest/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "shadow-s-edge",
+    "title": "Shadow's Edge",
+    "author": "Brent Weeks",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "fiction"
+    ],
+    "frontImage": "images/shadow-s-edge/front.jpg",
+    "backImage": "images/shadow-s-edge/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "wallflower-wager",
+    "title": "Wallflower Wager",
+    "author": "Tessa Dare",
+    "condition": "Very Good — light shelf wear, no marks inside",
+    "available": true,
+    "tags": [
+      "romance",
+      "fiction"
+    ],
+    "frontImage": "images/wallflower-wager/front.jpg",
+    "backImage": "images/wallflower-wager/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-invention-of-wings",
+    "title": "The Invention of Wings",
+    "author": "Sue Monk Kidd",
+    "condition": "Good - light shelf wear",
+    "available": true,
+    "tags": [
+      "historical",
+      "contemporary literature",
+      "fiction"
+    ],
+    "frontImage": "images/the-invention-of-wings/front.jpg",
+    "backImage": "images/the-invention-of-wings/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-book-of-goose",
+    "title": "The Book of Goose",
+    "author": "Yiyun Li",
+    "condition": "Very Good — light shelf wear, no marks inside",
+    "available": true,
+    "tags": [
+      "fiction",
+      "contemporary literature"
+    ],
+    "frontImage": "images/the-book-of-goose/front.jpg",
+    "backImage": "images/the-book-of-goose/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "harry-potter-and-the-dealthy-hallows-book-7",
+    "title": "Harry Potter and the Dealthy Hallows (Book 7)",
+    "author": "J.K. Rowling",
+    "condition": "Used",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/harry-potter-and-the-dealthy-hallows-book-7/front.jpg",
+    "backImage": "images/harry-potter-and-the-dealthy-hallows-book-7/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-secret-barrister",
+    "title": "The Secret Barrister",
+    "author": "N/A",
+    "condition": "Very Good — light shelf wear, no marks inside",
+    "available": true,
+    "tags": [
+      "nonfiction",
+      "law"
+    ],
+    "frontImage": "images/the-secret-barrister/front.jpg",
+    "backImage": "images/the-secret-barrister/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "law-s-strangest-cases",
+    "title": "Law's Strangest Cases",
+    "author": "Peter Seddon",
+    "condition": "Very Good — light shelf wear",
+    "available": true,
+    "tags": [
+      "law",
+      "nonfiction"
+    ],
+    "frontImage": "images/law-s-strangest-cases/front.jpg",
+    "backImage": "images/law-s-strangest-cases/back.jpg",
     "notes": ""
   }
 ];
