@@ -10,7 +10,7 @@ const BOOKS = [
     "title": "Night Walking",
     "author": "Matthew Beaumont",
     "condition": "Very Good — light shelf wear, no marks inside",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction",
       "hardback"
@@ -39,7 +39,8 @@ const BOOKS = [
     "condition": "Used - old library book",
     "available": true,
     "tags": [
-      "children"
+      "children",
+      "historical"
     ],
     "frontImage": "images/the-book-thief/front.jpg",
     "backImage": "images/the-book-thief/back.jpg",
@@ -67,7 +68,8 @@ const BOOKS = [
     "available": true,
     "tags": [
       "fiction",
-      "literature"
+      "literature",
+      "historical"
     ],
     "frontImage": "images/the-assault/front.jpg",
     "backImage": "images/the-assault/back.jpg",
@@ -110,7 +112,7 @@ const BOOKS = [
     "available": true,
     "tags": [
       "nonfiction",
-      "biography"
+      "philosophy"
     ],
     "frontImage": "images/the-better-angels-of-our-nature/front.jpg",
     "backImage": "images/the-better-angels-of-our-nature/back.jpg",
@@ -215,7 +217,7 @@ const BOOKS = [
   },
   {
     "id": "ivy-bean",
-    "title": "Ivy + Bean",
+    "title": "Ivy + Bean (Ivy + Bean 1)",
     "author": "Annie Barrows",
     "condition": "Very Good — light shelf wear, no marks inside",
     "available": true,
@@ -241,7 +243,7 @@ const BOOKS = [
   },
   {
     "id": "ivy-bean-break-the-fossil-record",
-    "title": "Ivy + Bean Break the Fossil Record",
+    "title": "Ivy + Bean Break the Fossil Record (Ivy + Bean 3)",
     "author": "Annie Burrows",
     "condition": "Very Good — light shelf wear, no marks inside",
     "available": true,
@@ -421,7 +423,7 @@ const BOOKS = [
   },
   {
     "id": "harry-potter-and-the-half-blood-prince-book-6",
-    "title": "Harry Potter and the Half-Blood Prince (Book 6)",
+    "title": "Harry Potter and the Half-Blood Prince (Harry Potter 6)",
     "author": "J.K. Rowling",
     "condition": "Used",
     "available": true,
@@ -674,7 +676,7 @@ const BOOKS = [
   },
   {
     "id": "sophie-s-misfortunes-the-fleurville-trilogy",
-    "title": "Sophie's Misfortunes (The Fleurville Trilogy)",
+    "title": "Sophie's Misfortunes (The Fleurville Trilogy 1)",
     "author": "Countess de Segur",
     "condition": "Good - shelf wear",
     "available": true,
@@ -687,7 +689,7 @@ const BOOKS = [
   },
   {
     "id": "camille-and-madeleine",
-    "title": "Camille and Madeleine (The Fleurville Trilogy)",
+    "title": "Camille and Madeleine (The Fleurville Trilogy 2)",
     "author": "Countess de Segur",
     "condition": "Good - shelf wear",
     "available": true,
@@ -1103,7 +1105,7 @@ const BOOKS = [
     ],
     "frontImage": "images/toutes-les-intelligences-du-monde/front.jpg",
     "backImage": "images/toutes-les-intelligences-du-monde/back.jpg",
-    "notes": ""
+    "notes": "This is in French"
   },
   {
     "id": "call-us-what-we-carry",
@@ -1323,7 +1325,8 @@ const BOOKS = [
     "available": true,
     "tags": [
       "literature",
-      "fiction"
+      "fiction",
+      "romance"
     ],
     "frontImage": "images/pride-and-prejudice/front.jpg",
     "backImage": "images/pride-and-prejudice/back.jpg",
@@ -1337,7 +1340,8 @@ const BOOKS = [
     "available": true,
     "tags": [
       "literature",
-      "fiction"
+      "fiction",
+      "romance"
     ],
     "frontImage": "images/my-cousin-rachel/front.jpg",
     "backImage": "images/my-cousin-rachel/back.jpg",
@@ -1365,7 +1369,7 @@ const BOOKS = [
     "available": true,
     "tags": [
       "literature",
-      "non-fiction",
+      "nonfiction",
       "biography"
     ],
     "frontImage": "images/selected-diaries/front.jpg",
