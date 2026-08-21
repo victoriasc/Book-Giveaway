@@ -21,6 +21,7 @@ const els = {};
 
 document.addEventListener("DOMContentLoaded", () => {
   cacheEls();
+  console.debug("admin: heic2any available?", typeof window.heic2any);
   wireStaticEvents();
   tryFallbackLoad();
   renderList();
@@ -246,6 +247,7 @@ function handleFileChosen(evt, which) {
 // Separated out from the event handler so it can be async without
 // leaving the change handler itself as a dangling promise.
 async function processChosenFile(file, which) {
+  console.debug("admin: file chosen", { name: file.name, type: file.type, size: file.size, which });
   const previewImg = which === "front" ? els.frontPreview : els.backPreview;
   const pathField = which === "front" ? els.fFrontPath : els.fBackPath;
   const downloadLink = which === "front" ? els.frontDownload : els.backDownload;
@@ -254,9 +256,11 @@ async function processChosenFile(file, which) {
   let ext = (file.name.split(".").pop() || "jpg").toLowerCase();
 
   if (isHeic(file)) {
+    console.debug("admin: detected HEIC file", { name: file.name, type: file.type });
     if (typeof window.heic2any === "function") {
       try {
         showToast("Converting HEIC photo to JPEG…");
+        console.debug("admin: attempting heic2any conversion for", file.name);
         const conv = await convertHeicToJpeg(file);
         // heic2any may return an array of blobs for multi-image containers — pick first
         const convBlob = Array.isArray(conv) ? conv[0] : conv;

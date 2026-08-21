@@ -146,7 +146,7 @@ const BOOKS = [
     "tags": [
       "fantasy"
     ],
-    "frontImage": "images/book/front.heic",
+    "frontImage": "images/test-2/front.heic",
     "backImage": "images/test-2/back.heic",
     "notes": ""
   }
