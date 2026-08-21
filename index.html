@@ -22,6 +22,14 @@
     <div class="catalog-meta">
       <span>Catalog</span>
       <span id="catalog-count">Loading…</span>
+      <label class="sort-control" for="sort-select">
+        Sort by
+        <select id="sort-select">
+          <option value="title">Title (A–Z)</option>
+          <option value="author">Author (A–Z)</option>
+          <option value="availability">Availability</option>
+        </select>
+      </label>
     </div>
     <div class="catalog-grid" id="catalog-grid" aria-live="polite"></div>
   </main>

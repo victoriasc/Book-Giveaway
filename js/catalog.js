@@ -1,26 +1,33 @@
 /*
   CATALOG.JS
-  Builds the grid of book cards on the index page.
+  Builds the grid of book cards on the index page, and re-sorts it
+  when the visitor picks a different sort order.
 */
 
-function renderCatalog() {
-  const grid = document.getElementById("catalog-grid");
-  const countEl = document.getElementById("catalog-count");
-  const books = Array.isArray(window.BOOKS) ? window.BOOKS : [];
+let allBooks = [];
 
-  if (books.length === 0) {
-    grid.innerHTML = "";
-    const empty = document.createElement("p");
-    empty.className = "empty-state";
-    empty.textContent = "No books catalogued yet — add some in js/books-data.js.";
-    grid.after(empty);
-    countEl.textContent = "0 titles";
-    return;
+function sortBooks(books, mode) {
+  const copy = [...books];
+  const byTitle = (a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: "base" });
+  const byAuthor = (a, b) => a.author.localeCompare(b.author, undefined, { sensitivity: "base" });
+
+  switch (mode) {
+    case "author":
+      copy.sort(byAuthor);
+      break;
+    case "availability":
+      // Available books first, given-away books after; alphabetical by title within each group.
+      copy.sort((a, b) => (b.available === a.available ? byTitle(a, b) : (b.available ? 1 : -1)));
+      break;
+    case "title":
+    default:
+      copy.sort(byTitle);
   }
+  return copy;
+}
 
-  const availableCount = books.filter(b => b.available).length;
-  countEl.textContent = `${books.length} title${books.length === 1 ? "" : "s"} · ${availableCount} available`;
-
+function renderCards(books) {
+  const grid = document.getElementById("catalog-grid");
   grid.innerHTML = "";
 
   books.forEach(book => {
@@ -41,6 +48,33 @@ function renderCatalog() {
 
     attachImageFallback(card.querySelector("img"));
     grid.appendChild(card);
+  });
+}
+
+function renderCatalog() {
+  const grid = document.getElementById("catalog-grid");
+  const countEl = document.getElementById("catalog-count");
+  const sortSelect = document.getElementById("sort-select");
+  allBooks = Array.isArray(window.BOOKS) ? window.BOOKS : [];
+
+  if (allBooks.length === 0) {
+    grid.innerHTML = "";
+    const empty = document.createElement("p");
+    empty.className = "empty-state";
+    empty.textContent = "No books catalogued yet — add some in js/books-data.js.";
+    grid.after(empty);
+    countEl.textContent = "0 titles";
+    sortSelect.closest(".sort-control").hidden = true;
+    return;
+  }
+
+  const availableCount = allBooks.filter(b => b.available).length;
+  countEl.textContent = `${allBooks.length} title${allBooks.length === 1 ? "" : "s"} · ${availableCount} available`;
+
+  renderCards(sortBooks(allBooks, sortSelect.value));
+
+  sortSelect.addEventListener("change", () => {
+    renderCards(sortBooks(allBooks, sortSelect.value));
   });
 }
 
