@@ -84,6 +84,46 @@ const BOOKS = [
     "frontImage": "images/the-better-angels-of-our-nature/front.heic",
     "backImage": "images/the-better-angels-of-our-nature/back.heic",
     "notes": ""
+  },
+  {
+    "id": "alias-grace",
+    "title": "Alias Grace",
+    "author": "Margaret Atwood",
+    "condition": "Very Good",
+    "available": true,
+    "frontImage": "images/alias-grace/front.heic",
+    "backImage": "images/alias-grace/back.heic",
+    "notes": ""
+  },
+  {
+    "id": "flesh",
+    "title": "Flesh",
+    "author": "David Szalay",
+    "condition": "Excellent",
+    "available": true,
+    "frontImage": "images/flesh/front.heic",
+    "backImage": "images/flesh/back.heic",
+    "notes": ""
+  },
+  {
+    "id": "conspiracy-nation",
+    "title": "Conspiracy Nation",
+    "author": "Ariel Bogle and Cam Wilson",
+    "condition": "Excellent",
+    "available": true,
+    "frontImage": "images/conspiracy-nation/front.heic",
+    "backImage": "images/conspiracy-nation/back.heic",
+    "notes": ""
+  },
+  {
+    "id": "percy-jackson",
+    "title": "Percy Jackson",
+    "author": "Rick Riordan",
+    "condition": "Good - light shelf wear",
+    "available": true,
+    "frontImage": "images/percy-jackson/front.heic",
+    "backImage": "images/percy-jackson/back.heic",
+    "notes": ""
   }
 ];
 
