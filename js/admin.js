@@ -21,7 +21,6 @@ const els = {};
 
 document.addEventListener("DOMContentLoaded", () => {
   cacheEls();
-  console.debug("admin: heic2any available?", typeof window.heic2any);
   wireStaticEvents();
   tryFallbackLoad();
   renderList();
@@ -247,7 +246,6 @@ function handleFileChosen(evt, which) {
 // Separated out from the event handler so it can be async without
 // leaving the change handler itself as a dangling promise.
 async function processChosenFile(file, which) {
-  console.debug("admin: file chosen", { name: file.name, type: file.type, size: file.size, which });
   const previewImg = which === "front" ? els.frontPreview : els.backPreview;
   const pathField = which === "front" ? els.fFrontPath : els.fBackPath;
   const downloadLink = which === "front" ? els.frontDownload : els.backDownload;
@@ -256,44 +254,26 @@ async function processChosenFile(file, which) {
   let ext = (file.name.split(".").pop() || "jpg").toLowerCase();
 
   if (isHeic(file)) {
-    console.debug("admin: detected HEIC file", { name: file.name, type: file.type });
     if (typeof window.heic2any === "function") {
       try {
         showToast("Converting HEIC photo to JPEG…");
-        console.debug("admin: attempting heic2any conversion for", file.name);
-          const conv = await convertHeicToJpeg(file);
-          // heic2any may return an array of blobs for multi-image containers — pick first
-          const convBlob = Array.isArray(conv) ? conv[0] : conv;
-          if (convBlob instanceof Blob) {
-            // create a File with a .jpg filename so downloads and writes use the correct extension
-            const baseName = (file.name || "photo").replace(/\.(heic|heif)$/i, "");
-            outputFile = new File([convBlob], `${baseName}.jpg`, { type: "image/jpeg" });
-            ext = "jpg";
-            showToast("Converted to JPEG.");
-          } else {
-            // conversion did not produce a blob — treat as failure
-            showToast("Couldn't convert that HEIC photo automatically — please convert it manually before publishing.", true);
-            console.debug("admin: conversion returned non-blob, skipping automatic save for", file.name, conv);
-            outputFile = null;
-        }
+        outputFile = await convertHeicToJpeg(file);
+        ext = "jpg";
+        showToast("Converted to JPEG.");
       } catch (e) {
-          showToast("Couldn't convert that HEIC photo automatically — please convert it manually before publishing.", true);
-          console.debug("admin: heic2any error", e);
-          outputFile = null;
+        showToast("Couldn't convert that HEIC photo automatically — using the original file. " +
+          "You may want to convert it yourself before publishing.", true);
       }
     } else {
-        showToast("The HEIC converter didn't load (check your internet connection) — please convert the file manually before publishing.", true);
-        console.debug("admin: heic2any not available");
-        outputFile = null;
+      showToast("The HEIC converter didn't load (check your internet connection) — using the " +
+        "original file. You may want to convert it yourself before publishing.", true);
     }
   }
 
   if (which === "front") pendingFrontFile = outputFile; else pendingBackFile = outputFile;
 
   if (previewImg.dataset.objectUrl) URL.revokeObjectURL(previewImg.dataset.objectUrl);
-  // If outputFile is null (conversion failed), still preview the original file
-  const previewSource = outputFile || file;
-  const objectUrl = URL.createObjectURL(previewSource);
+  const objectUrl = URL.createObjectURL(outputFile);
   previewImg.src = objectUrl;
   previewImg.dataset.objectUrl = objectUrl;
 
@@ -304,11 +284,6 @@ async function processChosenFile(file, which) {
     downloadLink.href = objectUrl;
     downloadLink.download = `${which}.${ext}`;
     downloadLink.hidden = false;
-      if (!outputFile) {
-        // If we couldn't convert, make it clear the download is the original HEIC
-        downloadLink.textContent = "Download original (HEIC)";
-      } else {
-        downloadLink.textContent = "Download this photo";
   }
 }
 
@@ -320,103 +295,10 @@ function isHeic(file) {
 }
 
 async function convertHeicToJpeg(file) {
-  // Try Chrome's native ImageDecoder first (best chance in modern Chrome).
-  if (typeof ImageDecoder !== "undefined") {
-    try {
-      const decoder = new ImageDecoder({ data: file, type: file.type || "image/heic" });
-      const result = await decoder.decode();
-      const imgBitmap = result.image;
-      if (imgBitmap) {
-        const canvas = document.createElement("canvas");
-        canvas.width = imgBitmap.width || imgBitmap.naturalWidth || 0;
-        canvas.height = imgBitmap.height || imgBitmap.naturalHeight || 0;
-        const ctx = canvas.getContext("2d");
-        ctx.drawImage(imgBitmap, 0, 0);
-        const jpegBlob = await new Promise((resolve, reject) => {
-          canvas.toBlob((b) => { if (b) resolve(b); else reject(new Error("ImageDecoder canvas toBlob returned null")); }, "image/jpeg", 0.9);
-        });
-        return jpegBlob;
-      }
-    } catch (e) {
-      console.debug("ImageDecoder failed:", e);
-      // fall through to other strategies
-    }
-  }
-
-  // Prefer the library conversion next, then canvas fallback.
-  if (typeof window.heic2any === "function") {
-    try {
-      const result = await window.heic2any({ blob: file, toType: "image/jpeg", quality: 0.9 });
-      return Array.isArray(result) ? result[0] : result;
-    } catch (e) {
-      console.debug("heic2any failed:", e);
-    }
-  }
-
-  // Canvas fallback: try to decode the blob into an ImageBitmap or HTMLImageElement,
-  // draw it to a canvas and export a JPEG blob.
-  try {
-    return await convertImageBlobToJpegViaCanvas(file, 0.9);
-  } catch (e) {
-    console.debug("canvas fallback failed:", e);
-    throw e; // let caller handle the failure
-  }
-}
-
-async function convertImageBlobToJpegViaCanvas(blob, quality = 0.9) {
-  // Try createImageBitmap first (faster, no DOM). If that fails, use an <img> element.
-  let imgBitmap = null;
-  try {
-    imgBitmap = await createImageBitmap(blob);
-  } catch (e) {
-    // createImageBitmap may not support this format; try using an Image element as a fallback
-    const objectUrl = URL.createObjectURL(blob);
-    try {
-      imgBitmap = await new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => {
-          try {
-            const canvas = document.createElement("canvas");
-            canvas.width = img.naturalWidth || img.width;
-            canvas.height = img.naturalHeight || img.height;
-            const ctx = canvas.getContext("2d");
-            ctx.drawImage(img, 0, 0);
-            canvas.toBlob((b) => {
-              if (b) resolve(b); else reject(new Error("Canvas toBlob returned null"));
-            }, "image/jpeg", quality);
-          } catch (err) {
-            reject(err);
-          }
-        };
-        img.onerror = (err) => reject(err || new Error("Image load error"));
-        img.src = objectUrl;
-      });
-      // If the promise resolved with a Blob from canvas.toBlob, return that
-      if (imgBitmap instanceof Blob) return imgBitmap;
-      // Otherwise, fall through to use the ImageBitmap path below
-    } finally {
-      URL.revokeObjectURL(objectUrl);
-    }
-  }
-
-  // If we have an ImageBitmap, draw it to canvas and export a JPEG blob.
-  if (imgBitmap) {
-    // If imgBitmap is already a Blob returned by the <img> fallback, return it.
-    if (imgBitmap instanceof Blob) return imgBitmap;
-
-    const width = imgBitmap.width || imgBitmap.naturalWidth;
-    const height = imgBitmap.height || imgBitmap.naturalHeight;
-    const canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = height;
-    const ctx = canvas.getContext("2d");
-    ctx.drawImage(imgBitmap, 0, 0);
-    const jpegBlob = await new Promise((resolve, reject) => {
-      canvas.toBlob((b) => { if (b) resolve(b); else reject(new Error("canvas.toBlob returned null")); }, "image/jpeg", quality);
-    });
-    return jpegBlob;
-  }
-  throw new Error("Could not convert image blob to JPEG via canvas");
+  const result = await window.heic2any({ blob: file, toType: "image/jpeg", quality: 0.9 });
+  // heic2any returns an array of Blobs for multi-image HEIC containers (e.g. Live Photos) —
+  // we just want the first/primary image.
+  return Array.isArray(result) ? result[0] : result;
 }
 
 async function handleSave(evt) {
@@ -445,43 +327,13 @@ async function handleSave(evt) {
     notes: els.fNotes.value.trim()
   };
 
-  // If we've converted any pending files to JPEG, make sure the entry paths use .jpg
-  function ensureExt(path, ext) {
-    if (!path) return path;
-    return path.replace(/\.[^/.]+$/, `.${ext}`);
-  }
-  if (pendingFrontFile && pendingFrontFile.type === "image/jpeg") {
-    entry.frontImage = ensureExt(entry.frontImage, "jpg");
-  }
-  if (pendingBackFile && pendingBackFile.type === "image/jpeg") {
-    entry.backImage = ensureExt(entry.backImage, "jpg");
-  }
-
   // Copy any newly picked photos into place if we have disk access.
   if (projectDirHandle && (pendingFrontFile || pendingBackFile)) {
     try {
       const imagesDir = await projectDirHandle.getDirectoryHandle("images", { create: true });
       const bookDir = await imagesDir.getDirectoryHandle(id, { create: true });
-      // Determine filenames to use based on converted file types (fall back to paths in the form)
-      if (pendingFrontFile) {
-        let fname = filenameFromPath(entry.frontImage);
-        // If the pending file is JPEG but the path doesn't end with .jpg, force .jpg
-        if (pendingFrontFile.type === "image/jpeg") {
-          fname = fname.replace(/\.[^/.]+$/, ".jpg");
-          entry.frontImage = entry.frontImage.replace(/\.[^/.]+$/, ".jpg");
-        }
-        console.debug("admin: writing front file", { originalName: pendingFrontFile.name, type: pendingFrontFile.type, size: pendingFrontFile.size, chosenFilename: fname });
-        await writeFileToDir(bookDir, fname, pendingFrontFile);
-      }
-      if (pendingBackFile) {
-        let fname = filenameFromPath(entry.backImage);
-        if (pendingBackFile.type === "image/jpeg") {
-          fname = fname.replace(/\.[^/.]+$/, ".jpg");
-          entry.backImage = entry.backImage.replace(/\.[^/.]+$/, ".jpg");
-        }
-        console.debug("admin: writing back file", { originalName: pendingBackFile.name, type: pendingBackFile.type, size: pendingBackFile.size, chosenFilename: fname });
-        await writeFileToDir(bookDir, fname, pendingBackFile);
-      }
+      if (pendingFrontFile) await writeFileToDir(bookDir, filenameFromPath(entry.frontImage), pendingFrontFile);
+      if (pendingBackFile) await writeFileToDir(bookDir, filenameFromPath(entry.backImage), pendingBackFile);
     } catch (e) {
       showToast("Saved the book's details, but couldn't copy the photos automatically: " + e.message, true);
     }
