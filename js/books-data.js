@@ -448,7 +448,7 @@ const BOOKS = [
   },
   {
     "id": "shadow-s-edge",
-    "title": "Shadow's Edge",
+    "title": "Shadow's Edge (The Night Angel Trilogy 2)",
     "author": "Brent Weeks",
     "condition": "Good",
     "available": true,
@@ -1029,7 +1029,8 @@ const BOOKS = [
     "condition": "Used - old library book",
     "available": true,
     "tags": [
-      "nonfiction"
+      "nonfiction",
+      "hardback"
     ],
     "frontImage": "images/the-little-box-of-economics/front.jpg",
     "backImage": "images/the-little-box-of-economics/back.jpg",
@@ -1047,6 +1048,200 @@ const BOOKS = [
     ],
     "frontImage": "images/memories/front.jpg",
     "backImage": "images/memories/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-lost-spells",
+    "title": "The Lost Spells",
+    "author": "Robert MacFarlane and Jackie Morris",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "poetry",
+      "hardback"
+    ],
+    "frontImage": "images/the-lost-spells/front.jpg",
+    "backImage": "images/the-lost-spells/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "magical-negro",
+    "title": "Magical Negro",
+    "author": "Morgan Parker",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "poetry"
+    ],
+    "frontImage": "images/magical-negro/front.jpg",
+    "backImage": "images/magical-negro/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "10-000-years-of-art",
+    "title": "10,000 Years of Art",
+    "author": "Phaidon",
+    "condition": "Good - shelf wear",
+    "available": true,
+    "tags": [
+      "nonfiction",
+      "reference"
+    ],
+    "frontImage": "images/10-000-years-of-art/front.jpg",
+    "backImage": "images/10-000-years-of-art/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "toutes-les-intelligences-du-monde",
+    "title": "Toutes les intelligences du monde",
+    "author": "James Bridle",
+    "condition": "Very good",
+    "available": true,
+    "tags": [
+      "nonfiction",
+      "french"
+    ],
+    "frontImage": "images/toutes-les-intelligences-du-monde/front.jpg",
+    "backImage": "images/toutes-les-intelligences-du-monde/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "call-us-what-we-carry",
+    "title": "Call Us What We Carry",
+    "author": "Amanda Gorman",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "hardback",
+      "poetry"
+    ],
+    "frontImage": "images/call-us-what-we-carry/front.jpg",
+    "backImage": "images/call-us-what-we-carry/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "paper-boat",
+    "title": "Paper Boat",
+    "author": "Margaret Atwood",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "poetry",
+      "hardback"
+    ],
+    "frontImage": "images/paper-boat/front.jpg",
+    "backImage": "images/paper-boat/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "no-ordinary-genius",
+    "title": "No Ordinary Genius",
+    "author": "Richard Feynman",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "nonfiction",
+      "science"
+    ],
+    "frontImage": "images/no-ordinary-genius/front.jpg",
+    "backImage": "images/no-ordinary-genius/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-folk-of-the-faraway-tree",
+    "title": "The Folk of the Faraway Tree",
+    "author": "Enid Blyton",
+    "condition": "Good - shelf wear",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/the-folk-of-the-faraway-tree/front.jpg",
+    "backImage": "images/the-folk-of-the-faraway-tree/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-magic-faraway-tree",
+    "title": "The Magic Faraway Tree",
+    "author": "Enid Blyton",
+    "condition": "Good - shelf wear",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/the-magic-faraway-tree/front.jpg",
+    "backImage": "images/the-magic-faraway-tree/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-magical-adventures-of-the-wishing-chair",
+    "title": "The Magical Adventures of the Wishing Chair",
+    "author": "Enid Blyton",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/the-magical-adventures-of-the-wishing-chair/front.jpg",
+    "backImage": "images/the-magical-adventures-of-the-wishing-chair/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-good-people",
+    "title": "The Good People",
+    "author": "Hannah Kent",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "fiction",
+      "contemporary literature"
+    ],
+    "frontImage": "images/the-good-people/front.jpg",
+    "backImage": "images/the-good-people/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-way-of-shadows-the-night-angel-trilogy-1",
+    "title": "The Way of Shadows (The Night Angel Trilogy 1)",
+    "author": "Brent Weeks",
+    "condition": "Very Good — light shelf wear",
+    "available": true,
+    "tags": [
+      "fantasy"
+    ],
+    "frontImage": "images/the-way-of-shadows-the-night-angel-trilogy-1/front.jpg",
+    "backImage": "images/the-way-of-shadows-the-night-angel-trilogy-1/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "inkheart",
+    "title": "Inkheart",
+    "author": "Cornelia Funke",
+    "condition": "good - shelf wear",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/inkheart/front.jpg",
+    "backImage": "images/inkheart/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-little-princess",
+    "title": "The Little Princess",
+    "author": "Frances Hodgson Burnett",
+    "condition": "Good - shelf wear",
+    "available": true,
+    "tags": [
+      "children",
+      "literature"
+    ],
+    "frontImage": "images/the-little-princess/front.jpg",
+    "backImage": "images/the-little-princess/back.jpg",
     "notes": ""
   }
 ];
