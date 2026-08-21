@@ -1275,7 +1275,7 @@ const BOOKS = [
   {
     "id": "rumpelstiltskin",
     "title": "Rumpelstiltskin",
-    "author": "Paul O Zelinsky",
+    "author": "Paul O. Zelinsky",
     "condition": "Good - writing on front page",
     "available": true,
     "tags": [
@@ -1327,6 +1327,213 @@ const BOOKS = [
     ],
     "frontImage": "images/pride-and-prejudice/front.jpg",
     "backImage": "images/pride-and-prejudice/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "my-cousin-rachel",
+    "title": "My Cousin Rachel",
+    "author": "Daphne Du Maurier",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "literature",
+      "fiction"
+    ],
+    "frontImage": "images/my-cousin-rachel/front.jpg",
+    "backImage": "images/my-cousin-rachel/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "tao-te-ching",
+    "title": "Tao Te Ching",
+    "author": "Lao Tzu",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "literature",
+      "philosophy"
+    ],
+    "frontImage": "images/tao-te-ching/front.jpg",
+    "backImage": "images/tao-te-ching/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "selected-diaries",
+    "title": "Selected Diaries",
+    "author": "Virginia Woolf",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "literature",
+      "non-fiction",
+      "biography"
+    ],
+    "frontImage": "images/selected-diaries/front.jpg",
+    "backImage": "images/selected-diaries/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "my-grammar-and-i",
+    "title": "My Grammar and I",
+    "author": "Caroline Taggart and J.A. Wines",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "nonfiction",
+      "reference",
+      "hardback"
+    ],
+    "frontImage": "images/my-grammar-and-i/front.jpg",
+    "backImage": "images/my-grammar-and-i/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "quid-pro-quo",
+    "title": "Quid Pro Quo",
+    "author": "Peter Jones",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "nonfiction",
+      "hardback",
+      "reference",
+      "latin"
+    ],
+    "frontImage": "images/quid-pro-quo/front.jpg",
+    "backImage": "images/quid-pro-quo/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "aeneid-book-xii",
+    "title": "Aeneid Book XII",
+    "author": "Virgil",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "literature",
+      "latin",
+      "poetry"
+    ],
+    "frontImage": "images/aeneid-book-xii/front.jpg",
+    "backImage": "images/aeneid-book-xii/back.jpg",
+    "notes": "This does not have a translation and is just in Latin"
+  },
+  {
+    "id": "deltora-quest-the-complete-collection",
+    "title": "Deltora Quest: The Complete Collection",
+    "author": "Emily Rodda",
+    "condition": "Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children",
+      "hardback"
+    ],
+    "frontImage": "images/deltora-quest-the-complete-collection/front.jpg",
+    "backImage": "images/deltora-quest-the-complete-collection/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "deltora-quest-2-the-complete-collection",
+    "title": "Deltora Quest 2: The Complete Collection",
+    "author": "Emily Rodda",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children",
+      "hardback"
+    ],
+    "frontImage": "images/deltora-quest-2-the-complete-collection/front.jpg",
+    "backImage": "images/deltora-quest-2-the-complete-collection/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "deltora-quest-3-the-complete-collection",
+    "title": "Deltora Quest 3: The Complete Collection",
+    "author": "Emily Rodda",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children",
+      "hardback"
+    ],
+    "frontImage": "images/deltora-quest-3-the-complete-collection/front.jpg",
+    "backImage": "images/deltora-quest-3-the-complete-collection/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-deltora-book-of-monsters",
+    "title": "The Deltora Book of Monsters",
+    "author": "Emily Rodda",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children",
+      "reference"
+    ],
+    "frontImage": "images/the-deltora-book-of-monsters/front.jpg",
+    "backImage": "images/the-deltora-book-of-monsters/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "secrets-of-deltora",
+    "title": "Secrets of Deltora",
+    "author": "Emily Rodda",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children",
+      "reference",
+      "hardback"
+    ],
+    "frontImage": "images/secrets-of-deltora/front.jpg",
+    "backImage": "images/secrets-of-deltora/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-big-book-of-tashi",
+    "title": "The Big Book of Tashi",
+    "author": "Anna & Barbara Fienberg and Kim Gamble",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/the-big-book-of-tashi/front.jpg",
+    "backImage": "images/the-big-book-of-tashi/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-2nd-big-book-of-tashi",
+    "title": "The 2nd Big Book of Tashi",
+    "author": "Anna & Barbara Fienberg and Kim Gamble",
+    "condition": "Very Good",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/the-2nd-big-book-of-tashi/front.jpg",
+    "backImage": "images/the-2nd-big-book-of-tashi/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "tashi-and-the-mixed-up-monster",
+    "title": "Tashi and the Mixed-up Monster",
+    "author": "Anna & Barbara Fienberg and Kim Gamble",
+    "condition": "Excellent",
+    "available": true,
+    "tags": [
+      "fantasy",
+      "children"
+    ],
+    "frontImage": "images/tashi-and-the-mixed-up-monster/front.jpg",
+    "backImage": "images/tashi-and-the-mixed-up-monster/back.jpg",
     "notes": ""
   }
 ];
