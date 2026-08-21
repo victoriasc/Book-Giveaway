@@ -291,12 +291,11 @@ async function processChosenFile(file, which) {
   if (which === "front") pendingFrontFile = outputFile; else pendingBackFile = outputFile;
 
   if (previewImg.dataset.objectUrl) URL.revokeObjectURL(previewImg.dataset.objectUrl);
-  const objectUrl = URL.createObjectURL(outputFile);
-    // If outputFile is null (conversion failed), still preview the original file
-    const previewSource = outputFile || file;
-    const objectUrl = URL.createObjectURL(previewSource);
-    previewImg.src = objectUrl;
-    previewImg.dataset.objectUrl = objectUrl;
+  // If outputFile is null (conversion failed), still preview the original file
+  const previewSource = outputFile || file;
+  const objectUrl = URL.createObjectURL(previewSource);
+  previewImg.src = objectUrl;
+  previewImg.dataset.objectUrl = objectUrl;
 
   const id = els.fId.value.trim() || slugify(els.fTitle.value) || "book";
   pathField.value = `images/${id}/${which}.${ext}`;
