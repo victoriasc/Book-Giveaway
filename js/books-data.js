@@ -1001,7 +1001,7 @@ const BOOKS = [
     "title": "Australian Concise Oxford Dictionary",
     "author": "N/A",
     "condition": "Excellent",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction",
       "reference"
@@ -1381,7 +1381,7 @@ const BOOKS = [
     "title": "My Grammar and I",
     "author": "Caroline Taggart and J.A. Wines",
     "condition": "Excellent",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction",
       "reference",
