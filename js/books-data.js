@@ -10,7 +10,7 @@ const BOOKS = [
     "title": "Night Walking",
     "author": "Matthew Beaumont",
     "condition": "Very Good — light shelf wear, no marks inside",
-    "available": false,
+    "available": true,
     "tags": [
       "nonfiction",
       "hardback"
@@ -273,7 +273,7 @@ const BOOKS = [
     "title": "What Happens Now?",
     "author": "Sophia Money-Coutts",
     "condition": "Very Good — light shelf wear, no marks inside",
-    "available": true,
+    "available": false,
     "tags": [
       "romance",
       "fiction"
@@ -1337,7 +1337,7 @@ const BOOKS = [
     "title": "My Cousin Rachel",
     "author": "Daphne Du Maurier",
     "condition": "Very Good",
-    "available": true,
+    "available": false,
     "tags": [
       "literature",
       "fiction",
