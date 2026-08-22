@@ -1539,6 +1539,36 @@ const BOOKS = [
     "frontImage": "images/tashi-and-the-mixed-up-monster/front.jpg",
     "backImage": "images/tashi-and-the-mixed-up-monster/back.jpg",
     "notes": ""
+  },
+  {
+    "id": "the-iliad",
+    "title": "The Iliad",
+    "author": "Homer",
+    "condition": "Good - shelf wear",
+    "available": true,
+    "tags": [
+      "literature",
+      "poetry",
+      "ancient greek"
+    ],
+    "frontImage": "images/the-illiad/front.jpg",
+    "backImage": "images/the-illiad/back.jpg",
+    "notes": ""
+  },
+  {
+    "id": "the-odyssey",
+    "title": "The Odyssey",
+    "author": "Homer",
+    "condition": "Good - shelf wear",
+    "available": true,
+    "tags": [
+      "literature",
+      "poetry",
+      "ancient greek"
+    ],
+    "frontImage": "images/the-odyssey/front.jpg",
+    "backImage": "images/the-odyssey/back.jpg",
+    "notes": ""
   }
 ];
 
