@@ -37,7 +37,7 @@ const BOOKS = [
     "title": "The Book Thief",
     "author": "Markus Zusak",
     "condition": "Used - old library book",
-    "available": true,
+    "available": false,
     "tags": [
       "children",
       "historical"
@@ -51,7 +51,7 @@ const BOOKS = [
     "title": "Love & Virtue",
     "author": "Diana Reid",
     "condition": "Good - light shelf wear",
-    "available": true,
+    "available": false,
     "tags": [
       "fiction",
       "contemporary literature"
@@ -80,7 +80,7 @@ const BOOKS = [
     "title": "The Bread the Devil Knead",
     "author": "Lisa Allen-Agostini",
     "condition": "Very Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fiction",
       "contemporary literature"
@@ -94,7 +94,7 @@ const BOOKS = [
     "title": "My Own Words",
     "author": "Ruth Bader Ginsburg",
     "condition": "Very Good",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction",
       "biography",
@@ -109,7 +109,7 @@ const BOOKS = [
     "title": "The Better Angels of Our Nature",
     "author": "Steven Pinker",
     "condition": "Used - Old Library Book",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction",
       "philosophy"
@@ -137,7 +137,7 @@ const BOOKS = [
     "title": "Flesh",
     "author": "David Szalay",
     "condition": "Excellent",
-    "available": true,
+    "available": false,
     "tags": [
       "fiction",
       "contemporary literature"
@@ -356,7 +356,7 @@ const BOOKS = [
     "title": "Harry Potter and the Chamber of Secrets (Harry Potter 2)",
     "author": "J.K. Rowling",
     "condition": "Used",
-    "available": true,
+    "available": false,
     "tags": [
       "children",
       "fantasy"
@@ -370,7 +370,7 @@ const BOOKS = [
     "title": "Harry Potter and the Prisoner of Azkaban (Harry Potter 3)",
     "author": "J.K. Rowling",
     "condition": "Used",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children"
@@ -384,7 +384,7 @@ const BOOKS = [
     "title": "Harry Potter and the Philosopher's Stone (Harry Potter 1)",
     "author": "J.K. Rowling",
     "condition": "Used",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children"
@@ -398,7 +398,7 @@ const BOOKS = [
     "title": "Harry Potter and the Goblet of Fire (Harry Potter 4)",
     "author": "J.K. Rowling",
     "condition": "Used",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children"
@@ -412,7 +412,7 @@ const BOOKS = [
     "title": "Harry Potter and the Order of the Phoenix (Harry Potter 5)",
     "author": "J.K. Rowling",
     "condition": "Used",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children"
@@ -426,7 +426,7 @@ const BOOKS = [
     "title": "Harry Potter and the Half-Blood Prince (Harry Potter 6)",
     "author": "J.K. Rowling",
     "condition": "Used",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children"
@@ -481,7 +481,7 @@ const BOOKS = [
     "title": "The Invention of Wings",
     "author": "Sue Monk Kidd",
     "condition": "Good - light shelf wear",
-    "available": true,
+    "available": false,
     "tags": [
       "historical",
       "contemporary literature",
@@ -496,7 +496,7 @@ const BOOKS = [
     "title": "The Book of Goose",
     "author": "Yiyun Li",
     "condition": "Very Good — light shelf wear, no marks inside",
-    "available": true,
+    "available": false,
     "tags": [
       "fiction",
       "contemporary literature"
@@ -510,7 +510,7 @@ const BOOKS = [
     "title": "Harry Potter and the Dealthy Hallows (Book 7)",
     "author": "J.K. Rowling",
     "condition": "Used",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children"
@@ -524,7 +524,7 @@ const BOOKS = [
     "title": "The Secret Barrister",
     "author": "N/A",
     "condition": "Very Good — light shelf wear, no marks inside",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction",
       "law"
@@ -538,7 +538,7 @@ const BOOKS = [
     "title": "Law's Strangest Cases",
     "author": "Peter Seddon",
     "condition": "Very Good — light shelf wear",
-    "available": true,
+    "available": false,
     "tags": [
       "law",
       "nonfiction",
@@ -553,7 +553,7 @@ const BOOKS = [
     "title": "The Odd Woman and the City",
     "author": "Vivian Gornick",
     "condition": "Used - old library book",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction",
       "biography"
@@ -581,7 +581,7 @@ const BOOKS = [
     "title": "Cats",
     "author": "N/A",
     "condition": "Very Good — light shelf wear",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction",
       "animals",
@@ -625,7 +625,7 @@ const BOOKS = [
     "title": "Station Eleven",
     "author": "Emily St John Mandel",
     "condition": "Very Good — light shelf wear",
-    "available": true,
+    "available": false,
     "tags": [
       "fiction",
       "contemporary literature",
@@ -1029,7 +1029,7 @@ const BOOKS = [
     "title": "The Little Book of Economics",
     "author": "Grep Ip",
     "condition": "Used - old library book",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction",
       "hardback"
@@ -1126,7 +1126,7 @@ const BOOKS = [
     "title": "Paper Boat",
     "author": "Margaret Atwood",
     "condition": "Excellent",
-    "available": true,
+    "available": false,
     "tags": [
       "poetry",
       "hardback"
@@ -1293,7 +1293,7 @@ const BOOKS = [
     "title": "Nineteen Eighty-Four",
     "author": "George Orwell",
     "condition": "Excellent",
-    "available": true,
+    "available": false,
     "tags": [
       "dystopia",
       "fiction",
@@ -1322,7 +1322,7 @@ const BOOKS = [
     "title": "Pride and Prejudice",
     "author": "Jane Austen",
     "condition": "Good",
-    "available": true,
+    "available": false,
     "tags": [
       "literature",
       "fiction",
@@ -1352,7 +1352,7 @@ const BOOKS = [
     "title": "Tao Te Ching",
     "author": "Lao Tzu",
     "condition": "Excellent",
-    "available": true,
+    "available": false,
     "tags": [
       "literature",
       "philosophy"
@@ -1366,7 +1366,7 @@ const BOOKS = [
     "title": "Selected Diaries",
     "author": "Virginia Woolf",
     "condition": "Excellent",
-    "available": true,
+    "available": false,
     "tags": [
       "literature",
       "nonfiction",
@@ -1396,7 +1396,7 @@ const BOOKS = [
     "title": "Quid Pro Quo",
     "author": "Peter Jones",
     "condition": "Excellent",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction",
       "hardback",
@@ -1427,7 +1427,7 @@ const BOOKS = [
     "title": "Deltora Quest: The Complete Collection",
     "author": "Emily Rodda",
     "condition": "Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children",
@@ -1442,7 +1442,7 @@ const BOOKS = [
     "title": "Deltora Quest 2: The Complete Collection",
     "author": "Emily Rodda",
     "condition": "Very Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children",
@@ -1457,7 +1457,7 @@ const BOOKS = [
     "title": "Deltora Quest 3: The Complete Collection",
     "author": "Emily Rodda",
     "condition": "Very Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children",
@@ -1545,7 +1545,7 @@ const BOOKS = [
     "title": "The Iliad",
     "author": "Homer",
     "condition": "Good - shelf wear",
-    "available": true,
+    "available": false,
     "tags": [
       "literature",
       "poetry",
@@ -1560,7 +1560,7 @@ const BOOKS = [
     "title": "The Odyssey",
     "author": "Homer",
     "condition": "Good - shelf wear",
-    "available": true,
+    "available": false,
     "tags": [
       "literature",
       "poetry",
