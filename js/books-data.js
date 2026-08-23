@@ -761,7 +761,7 @@ const BOOKS = [
     "title": "Magician's Nephew (Narnia 1)",
     "author": "C.S. Lewis",
     "condition": "Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children"
@@ -775,7 +775,7 @@ const BOOKS = [
     "title": "The Lion, the Witch and the Wardrobe (Narnia 2)",
     "author": "C.S. Lewis",
     "condition": "Good",
-    "available": true,
+    "available": false,
     "tags": [
       "children",
       "fantasy"
@@ -789,7 +789,7 @@ const BOOKS = [
     "title": "The Horse and His Boy (Narnia 3)",
     "author": "C.S. Lewis",
     "condition": "Good",
-    "available": true,
+    "available": false,
     "tags": [
       "children",
       "fantasy"
@@ -803,7 +803,7 @@ const BOOKS = [
     "title": "Prince Caspian (Narnia 4)",
     "author": "C.S. Lewis",
     "condition": "Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children"
@@ -817,7 +817,7 @@ const BOOKS = [
     "title": "The Voyage of the Dawn Trader (Narnia 5)",
     "author": "C.S. Lewis",
     "condition": "Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children"
@@ -831,7 +831,7 @@ const BOOKS = [
     "title": "The Silver Chair (Narnia 6)",
     "author": "C.S. Lewis",
     "condition": "Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children"
@@ -845,7 +845,7 @@ const BOOKS = [
     "title": "The Last Battle (Narnia 7)",
     "author": "C.S. Lewis",
     "condition": "Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children"
