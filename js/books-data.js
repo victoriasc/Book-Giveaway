@@ -123,7 +123,7 @@ const BOOKS = [
     "title": "Alias Grace",
     "author": "Margaret Atwood",
     "condition": "Very Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fiction",
       "literature"
@@ -151,7 +151,7 @@ const BOOKS = [
     "title": "Conspiracy Nation",
     "author": "Ariel Bogle and Cam Wilson",
     "condition": "Excellent",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction"
     ],
@@ -164,7 +164,7 @@ const BOOKS = [
     "title": "Percy Jackson Heroes of Olympus Son of Nepture",
     "author": "Rick Riordan",
     "condition": "Good - light shelf wear",
-    "available": true,
+    "available": false,
     "tags": [
       "children",
       "fantasy"
@@ -178,7 +178,7 @@ const BOOKS = [
     "title": "Percy Jackson Heroes of Olympus The Mark of Athena",
     "author": "Rick Riordan",
     "condition": "Good - light shelf wear",
-    "available": true,
+    "available": false,
     "tags": [
       "children",
       "fantasy"
@@ -287,7 +287,7 @@ const BOOKS = [
     "title": "Disquiet Please",
     "author": "The New Yorker",
     "condition": "Used - old library book",
-    "available": true,
+    "available": false,
     "tags": [
       "short stories"
     ],
@@ -453,7 +453,7 @@ const BOOKS = [
     "title": "Shadow's Edge (The Night Angel Trilogy 2)",
     "author": "Brent Weeks",
     "condition": "Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "fiction"
@@ -567,7 +567,7 @@ const BOOKS = [
     "title": "Witches Abroad (Discworld)",
     "author": "Terry Pratchett",
     "condition": "Used - library book",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "fiction"
@@ -611,7 +611,7 @@ const BOOKS = [
     "title": "Constance The Tragic and Scandalous Life of Mrs Oscar Wilde",
     "author": "Franny Moyle",
     "condition": "Good - light shelf wear",
-    "available": true,
+    "available": false,
     "tags": [
       "nonfiction",
       "biography"
@@ -747,7 +747,7 @@ const BOOKS = [
     "title": "Mort (Discworld)",
     "author": "Terry Pratchett",
     "condition": "Very Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "fiction"
@@ -1210,7 +1210,7 @@ const BOOKS = [
     "title": "The Way of Shadows (The Night Angel Trilogy 1)",
     "author": "Brent Weeks",
     "condition": "Very Good — light shelf wear",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy"
     ],
@@ -1264,7 +1264,7 @@ const BOOKS = [
     "title": "The Road",
     "author": "Cormac McCarthy",
     "condition": "Very Good",
-    "available": true,
+    "available": false,
     "tags": [
       "literature",
       "fiction",
@@ -1472,7 +1472,7 @@ const BOOKS = [
     "title": "The Deltora Book of Monsters",
     "author": "Emily Rodda",
     "condition": "Very Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children",
@@ -1487,7 +1487,7 @@ const BOOKS = [
     "title": "Secrets of Deltora",
     "author": "Emily Rodda",
     "condition": "Very Good",
-    "available": true,
+    "available": false,
     "tags": [
       "fantasy",
       "children",
